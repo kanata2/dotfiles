@@ -40,9 +40,15 @@ if has('vim_starting')
     NeoBundle 'open-browser.vim'
     NeoBundle 'ctrlp.vim'
     NeoBundle 'jelera/vim-javascript-syntax'
-    
+		NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
+		NeoBundle 'nathanaelkane/vim-indent-guides' " indent に色付け
+    "vim の立ち上げ時にindent-guidesをオン
+		let g:indent_guides_enable_on_vim_starup = 1
+		NeoBundle 'tomtom/tcomment_vim'
     "Color Scheme
     NeoBundle 'altercation/vim-colors-solarized'
+		NeoBundle 'djjcast/mirodark'
+		NeoBundle 'jonathanfilip/vim-lucius'
 
     filetype plugin indent on
 
