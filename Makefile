@@ -1,6 +1,6 @@
-DOT_FILES = .zshrc .vimrc .vim .irbrc .gitconfig
+DOT_FILES = .zshrc .vimrc .vim .irbrc .gitconfig .vrapperrc 
 
-all: zsh vim irb git
+all: zsh vim irb git vrapper
 
 zsh: $(foreach f, $(filter .zsh%, $(DOT_FILES)), link-dot-file-$(f))
 
@@ -9,6 +9,8 @@ vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
 irb: $(foreach f, $(filter .irb%, $(DOT_FILES)), link-dot-file-$(f))
 
 git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f))
+
+vrapper: $(foreach f, $(filter .vrapper%, $(DOT_FILES)), link-dot-file-$(f))
 
 .PHONY:clean
 clean: $(foreach, $(DOT_FILES), unlink-dot-file(f))

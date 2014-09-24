@@ -21,6 +21,7 @@ unite-locate
 unite.vim
 vim-colors-solarized
 vim-endwise
+vim-hybrid
 vim-indent-guides
 vim-javascript-syntax
 vim-localrc

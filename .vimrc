@@ -49,9 +49,9 @@ if has('vim_starting')
     NeoBundle 'altercation/vim-colors-solarized'
 		NeoBundle 'djjcast/mirodark'
 		NeoBundle 'jonathanfilip/vim-lucius'
+		NeoBundle 'w0ng/vim-hybrid'
 
     filetype plugin indent on
-
 
 
 "----------------------------------------
@@ -194,8 +194,6 @@ set showcmd
 "画面最後の行をできる限り表示する
 set display=lastline
 "Tab、行末の半角スペースを明示的に表示する
-"set list
-"set listchars=tab:^\ ,trail:~
 " ハイライトを有効にする
 if &t_Co > 2 || has('gui_running')
   syntax on
@@ -205,7 +203,8 @@ endif
 "gvimの色テーマは.gvimrcで指定する
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme hybrid
 
 """"""""""""""""""""""""""""""
 "ステータスラインに文字コードやBOM、16進表示等表示
