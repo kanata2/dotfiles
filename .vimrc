@@ -11,47 +11,46 @@ set nocompatible
 filetype plugin indent off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
-    endif
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+	call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
-    NeoBundle 'Shougo/neobundle.vim'
-    NeoBundle 'Shougo/neocomplcache'
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'Shougo/vimproc'
-    NeoBundle 'ujihisa/unite-locate'
-    NeoBundle 'violetyk/cake.vim'
-    NeoBundle 'tpope/vim-surround'
-    NeoBundle 'taglist.vim'
-    NeoBundle 'ZenCoding.vim'
-    NeoBundle 'ref.vim'
-    NeoBundle 'The-NERD-tree'
-    NeoBundle 'The-NERD-Commenter'
-    NeoBundle 'fugitive.vim'
-    NeoBundle 'TwitVim'
-    NeoBundle 'thinca/vim-quickrun'
-    NeoBundle 'thinca/vim-localrc'
-    NeoBundle 'dbext.vim'
-    NeoBundle 'rails.vim'
-    NeoBundle 'Gist.vim'
-    NeoBundle 'motemen/hatena-vim'
-    NeoBundle 'mattn/webapi-vim'
-    NeoBundle 'mattn/unite-advent_calendar'
-    NeoBundle 'open-browser.vim'
-    NeoBundle 'ctrlp.vim'
-    NeoBundle 'jelera/vim-javascript-syntax'
-		NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
-		NeoBundle 'nathanaelkane/vim-indent-guides' " indent に色付け
-    "vim の立ち上げ時にindent-guidesをオン
-		let g:indent_guides_enable_on_vim_starup = 1
-		NeoBundle 'tomtom/tcomment_vim'
-    "Color Scheme
-    NeoBundle 'altercation/vim-colors-solarized'
-		NeoBundle 'djjcast/mirodark'
-		NeoBundle 'jonathanfilip/vim-lucius'
-		NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'ujihisa/unite-locate'
+NeoBundle 'violetyk/cake.vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'taglist.vim'
+NeoBundle 'ZenCoding.vim'
+NeoBundle 'ref.vim'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'The-NERD-Commenter'
+NeoBundle 'fugitive.vim'
+NeoBundle 'TwitVim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-localrc'
+NeoBundle 'dbext.vim'
+NeoBundle 'rails.vim'
+NeoBundle 'Gist.vim'
+NeoBundle 'motemen/hatena-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/unite-advent_calendar'
+NeoBundle 'open-browser.vim'
+NeoBundle 'ctrlp.vim'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
+NeoBundle 'nathanaelkane/vim-indent-guides' " indent に色付け
+NeoBundle 'tomtom/tcomment_vim'
+"Color Scheme
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'djjcast/mirodark'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-scripts/phd'
 
-    filetype plugin indent on
+filetype plugin indent on
 
 
 "----------------------------------------
@@ -61,11 +60,11 @@ if has('vim_starting')
 "$MY_VIMRUNTIMEはユーザーランタイムディレクトリを示す。 
 ":echo $MY_VIMRUNTIMEで実際のパスを確認できます。 
 if isdirectory($HOME . '/.vim') 
-  let $MY_VIMRUNTIME = $HOME.'/.vim' 
+	let $MY_VIMRUNTIME = $HOME.'/.vim' 
 elseif isdirectory($HOME . '\vimfiles') 
-  let $MY_VIMRUNTIME = $HOME.'\vimfiles' 
+	let $MY_VIMRUNTIME = $HOME.'\vimfiles' 
 elseif isdirectory($VIM . '\vimfiles') 
-  let $MY_VIMRUNTIME = $VIM.'\vimfiles' 
+	let $MY_VIMRUNTIME = $VIM.'\vimfiles' 
 endif 
 "ランタイムパスを通す必要のあるプラグインを使用する場合
 "$MY_VIMRUNTIMEを使用すると Windows/Linuxで切り分ける必要が無くなります。 
@@ -101,10 +100,10 @@ set nobackup
 "set noswapfile
 "再読込、vim終了後も継続するアンドゥ(7.3)
 if version >= 703
-  "Persistent undoを有効化(7.3)
-  "set undofile
-  "アンドゥの保存場所(7.3)
-  "set undodir=.
+	"Persistent undoを有効化(7.3)
+	"set undofile
+	"アンドゥの保存場所(7.3)
+	"set undodir=.
 endif
 "viminfoを作成しない
 "set viminfo=
@@ -132,7 +131,7 @@ set ambiwidth=double
 set wildmenu
 "マウスを有効にする
 if has('mouse')
-  set mouse=a
+	set mouse=a
 endif
 "pluginを使用可能にする
 filetype plugin indent on
@@ -196,7 +195,7 @@ set display=lastline
 "Tab、行末の半角スペースを明示的に表示する
 " ハイライトを有効にする
 if &t_Co > 2 || has('gui_running')
-  syntax on
+	syntax on
 endif
 
 "色テーマ設定
@@ -204,30 +203,37 @@ endif
 syntax enable
 set background=dark
 "colorscheme solarized
-colorscheme hybrid
+colorscheme phd
+
+"vim の立ち上げ時にindent-guidesをオン
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd		ctermbg=110
+autocmd VimEnter,ColorScheme * :hi IndentGuidesEven		ctermbg=140
+let g:indent_guides_enable_on_vim_starup = 1
+let g:indent_guides_guide_size=1
 
 """"""""""""""""""""""""""""""
 "ステータスラインに文字コードやBOM、16進表示等表示
 "iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
 """"""""""""""""""""""""""""""
 if has('iconv')
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
+	set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
 else
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
+	set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
 endif
 
 function! FencB()
-  let c = matchstr(getline('.'), '.', col('.') - 1)
-  let c = iconv(c, &enc, &fenc)
-  return s:Byte2hex(s:Str2byte(c))
+	let c = matchstr(getline('.'), '.', col('.') - 1)
+	let c = iconv(c, &enc, &fenc)
+	return s:Byte2hex(s:Str2byte(c))
 endfunction
 
 function! s:Str2byte(str)
-  return map(range(len(a:str)), 'char2nr(a:str[v:val])')
+	return map(range(len(a:str)), 'char2nr(a:str[v:val])')
 endfunction
 
 function! s:Byte2hex(bytes)
-  return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
+	return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
 endfunction
 
 "----------------------------------------
@@ -235,24 +241,24 @@ endfunction
 "----------------------------------------
 " diffの設定
 if has('win95') || has('win16') || has('win32') || has('win64')
-  set diffexpr=MyDiff()
-  function! MyDiff()
-    silent! let saved_sxq=&shellxquote
-    silent! set shellxquote=
-    let opt = '-a --binary '
-    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-    let arg1 = v:fname_in
-    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-    let arg2 = v:fname_new
-    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-    let arg3 = v:fname_out
-    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-    " let cmd = '!diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-    let cmd = '!""' . $VIM . '\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
-    silent exe cmd
-    silent! let &shellxquote = saved_sxq
-  endfunction
+	set diffexpr=MyDiff()
+	function! MyDiff()
+		silent! let saved_sxq=&shellxquote
+		silent! set shellxquote=
+		let opt = '-a --binary '
+		if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+		if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+		let arg1 = v:fname_in
+		if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+		let arg2 = v:fname_new
+		if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+		let arg3 = v:fname_out
+		if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+		" let cmd = '!diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+		let cmd = '!""' . $VIM . '\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
+		silent exe cmd
+		silent! let &shellxquote = saved_sxq
+	endfunction
 endif
 "現バッファの差分表示(変更箇所の表示)
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
@@ -261,7 +267,7 @@ command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffspli
 "パッチコマンド
 set patchexpr=MyPatch()
 function! MyPatch()
-   :call system($VIM."\\'.'patch -o " . v:fname_out . " " . v:fname_in . " < " . v:fname_diff)
+	:call system($VIM."\\'.'patch -o " . v:fname_out . " " . v:fname_in . " < " . v:fname_diff)
 endfunction
 
 "----------------------------------------
@@ -303,11 +309,11 @@ nnoremap l <Right>zv
 "ファイルを開いたら前回のカーソル位置へ移動
 """"""""""""""""""""""""""""""
 augroup vimrcEx
-  autocmd!
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line('$') |
-    \   exe "normal! g`\"" |
-    \ endif
+	autocmd!
+	autocmd BufReadPost *
+				\ if line("'\"") > 1 && line("'\"") <= line('$') |
+				\   exe "normal! g`\"" |
+				\ endif
 augroup END
 
 """"""""""""""""""""""""""""""
@@ -316,11 +322,11 @@ augroup END
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
+	augroup InsertHook
+		autocmd!
+		autocmd InsertEnter * call s:StatusLine('Enter')
+		autocmd InsertLeave * call s:StatusLine('Leave')
+	augroup END
 endif
 " if has('unix') && !has('gui_running')
 "   " ESCでキー入力待ちになる対策
@@ -329,23 +335,23 @@ endif
 
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-    redraw
-  endif
+	if a:mode == 'Enter'
+		silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+		silent exec g:hi_insert
+	else
+		highlight clear StatusLine
+		silent exec s:slhlcmd
+		redraw
+	endif
 endfunction
 
 function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
+	redir => hl
+	exec 'highlight '.a:hi
+	redir END
+	let hl = substitute(hl, '[\r\n]', '', 'g')
+	let hl = substitute(hl, 'xxx', '', '')
+	return hl
 endfunction
 
 """"""""""""""""""""""""""""""
@@ -358,18 +364,18 @@ endfunction
 
 "デフォルトのZenkakuSpaceを定義
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+	highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
 endfunction
 
 if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    " ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
-    autocmd ColorScheme       * call ZenkakuSpace()
-    " 全角スペースのハイライト指定
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
+	augroup ZenkakuSpace
+		autocmd!
+		" ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
+		autocmd ColorScheme       * call ZenkakuSpace()
+		" 全角スペースのハイライト指定
+		autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+	augroup END
+	call ZenkakuSpace()
 endif
 
 """"""""""""""""""""""""""""""
