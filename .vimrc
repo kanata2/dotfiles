@@ -1,14 +1,6 @@
-set nocompatible
-scriptencoding cp932
-"scriptencodingと、このファイルのエンコーディングが一致するよう注意！
-"scriptencodingは、vimの内部エンコーディングと同じものを推奨します。
-"改行コードは set fileformat=unix に設定するとunixでも使えます。
-
 "----------------------------------------------------
 "" neobundle.vim
 "----------------------------------------------------
-set nocompatible
-filetype plugin indent off
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -49,10 +41,13 @@ NeoBundle 'djjcast/mirodark'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/phd'
+"HTML
+NeoBundle 'mattn/emmet-vim'
 
+"Required
 filetype plugin indent on
 
-
+NeoBundleCheck
 "----------------------------------------
 " ユーザーランタイムパス設定
 "----------------------------------------
@@ -72,39 +67,14 @@ endif
 "set runtimepath+=$MY_VIMRUNTIME/qfixapp
 
 "----------------------------------------
-" 内部エンコーディング指定
-"----------------------------------------
-"内部エンコーディングのUTF-8化と文字コードの自動認識設定をencode.vimで行う。
-"オールインワンパッケージの場合 vimrcで設定されているので何もしない。
-"エンコーディング指定や文字コードの自動認識設定が適切に設定されている場合、
-"次行の encode.vim読込部分はコメントアウトして下さい。「encode.vimについて」
-"silent! source $MY_VIMRUNTIME/pluginjp/encode.vim
-
-"scriptencodingと異なる内部エンコーディングに変更する場合、
-"変更後にもscriptencodingを指定しておくと問題が起きにくくなります。
-"scriptencoding cp932
-
-"----------------------------------------
 " システム設定
 "----------------------------------------
-"mswin.vimを読み込む
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
 
-"ファイルの上書きの前にバックアップを作る/作らない
-"set writebackupを指定してもオプション 'backup' がオンでない限り、
 "バックアップは上書きに成功した後に削除される。
 set nowritebackup
 "バックアップ/スワップファイルを作成する/しない
 set nobackup
-"set noswapfile
-"再読込、vim終了後も継続するアンドゥ(7.3)
-if version >= 703
-	"Persistent undoを有効化(7.3)
-	"set undofile
-	"アンドゥの保存場所(7.3)
-	"set undodir=.
-endif
+set noswapfile
 "viminfoを作成しない
 "set viminfo=
 "クリップボードを共有
@@ -172,8 +142,15 @@ set visualbell t_vb=
 set shellslash
 "行番号表示
 set number
+"カーソル行の背景色を変える
+set cursorline
 "括弧の対応表示時間
 set showmatch matchtime=1
+"不可視文字を表示
+"set list
+"不可視文字の表示記号指定
+"setlistchars=tab: ,eol: 
+
 "タブを設定
 "set ts=4 sw=4 sts=4
 set tabstop=2
@@ -192,18 +169,13 @@ set laststatus=2
 set showcmd
 "画面最後の行をできる限り表示する
 set display=lastline
-"Tab、行末の半角スペースを明示的に表示する
-" ハイライトを有効にする
-if &t_Co > 2 || has('gui_running')
-	syntax on
-endif
 
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
 syntax enable
 set background=dark
 "colorscheme solarized
-colorscheme phd
+colorscheme hybrid
 
 "vim の立ち上げ時にindent-guidesをオン
 let g:indent_guides_enable_on_vim_starup = 1
@@ -373,34 +345,3 @@ if has('syntax')
 	augroup END
 	call ZenkakuSpace()
 endif
-
-""""""""""""""""""""""""""""""
-"grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
-""""""""""""""""""""""""""""""
-"if exists('+autochdir')
-"  "autochdirがある場合カレントディレクトリを移動
-"  set autochdir
-"else
-"  "autochdirが存在しないが、カレントディレクトリを移動したい場合
-"  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
-"endif
-
-""""""""""""""""""""""""""""""
-"Windowsで内部エンコーディングがcp932以外の場合
-"makeのメッセージが化けるのを回避
-""""""""""""""""""""""""""""""
-"if has('win32') || has('win64') || has('win95') || has('win16')
-"  au QuickfixCmdPost make call QFixCnv('cp932')
-"endif
-"
-"function! QFixCnv(enc)
-"  if a:enc == &enc
-"    return
-"  endif
-"  let qflist = getqflist()
-"  for i in qflist
-"    let i.text = iconv(i.text, a:enc, &enc)
-"  endfor
-"  call setqflist(qflist)
-"endfunction
-
