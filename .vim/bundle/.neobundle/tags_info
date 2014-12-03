@@ -12,6 +12,7 @@ mirodark
 neobundle.vim
 neocomplcache
 open-browser.vim
+phd
 rails.vim
 ref.vim
 taglist.vim
