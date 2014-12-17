@@ -1,13 +1,11 @@
 Gist.vim
 The-NERD-Commenter
 The-NERD-tree
-TwitVim
-ZenCoding.vim
 cake.vim
 ctrlp.vim
 dbext.vim
+emmet-vim
 fugitive.vim
-hatena-vim
 mirodark
 neobundle.vim
 neocomplcache
@@ -17,10 +15,8 @@ rails.vim
 ref.vim
 taglist.vim
 tcomment_vim
-unite-advent_calendar
-unite-locate
-unite.vim
 vim-colors-solarized
+vim-css3-syntax
 vim-endwise
 vim-hybrid
 vim-indent-guides
