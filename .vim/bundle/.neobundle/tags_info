@@ -18,7 +18,6 @@ tcomment_vim
 vim-colors-solarized
 vim-css3-syntax
 vim-endwise
-vim-filetype-haskell
 vim-hybrid
 vim-indent-guides
 vim-javascript-syntax
@@ -27,5 +26,6 @@ vim-lucius
 vim-quickrun
 vim-rails
 vim-surround
+vim2hs
 vimproc
 webapi-vim

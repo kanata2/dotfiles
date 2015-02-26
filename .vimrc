@@ -47,7 +47,8 @@ NeoBundle 'violetyk/cake.vim'
 "DB
 NeoBundle 'dbext.vim'
 " Haskell
-NeoBundle 'kana/vim-filetype-haskell'
+"NeoBundle 'kana/vim-filetype-haskell'
+NeoBundle 'dag/vim2hs'
 
 
 "Required

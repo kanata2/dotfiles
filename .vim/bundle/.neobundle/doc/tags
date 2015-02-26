@@ -238,6 +238,8 @@
 :Cviewtab	cake.txt	/*:Cviewtab*
 :Cviewvsp	cake.txt	/*:Cviewvsp*
 :Gist	gist-vim.txt	/*:Gist*
+:HLint	vim2hs.txt	/*:HLint*
+:HPaste	vim2hs.txt	/*:HPaste*
 :IndentGuidesDisable	indent_guides.txt	/*:IndentGuidesDisable*
 :IndentGuidesEnable	indent_guides.txt	/*:IndentGuidesEnable*
 :IndentGuidesToggle	indent_guides.txt	/*:IndentGuidesToggle*
@@ -295,6 +297,7 @@
 :OpenBrowser	openbrowser.txt	/*:OpenBrowser*
 :OpenBrowserSearch	openbrowser.txt	/*:OpenBrowserSearch*
 :OpenBrowserSmartSearch	openbrowser.txt	/*:OpenBrowserSmartSearch*
+:PointFree	vim2hs.txt	/*:PointFree*
 :QuickRun	quickrun.txt	/*:QuickRun*
 :Ref	ref.txt	/*:Ref*
 :Ref-option	ref.txt	/*:Ref-option*
@@ -512,6 +515,9 @@ cake-run-testcase	cake.txt	/*cake-run-testcase*
 cake-specifying-app	cake.txt	/*cake-specifying-app*
 cake-variables	cake.txt	/*cake-variables*
 cake.txt	cake.txt	/*cake.txt*
+compiler-cabal	vim2hs.txt	/*compiler-cabal*
+compiler-hlint	vim2hs.txt	/*compiler-hlint*
+compiler-jmacro	vim2hs.txt	/*compiler-jmacro*
 config/rails.vim	rails.txt	/*config\/rails.vim*
 cs	surround.txt	/*cs*
 ctrlp-changelog	ctrlp.txt	/*ctrlp-changelog*
@@ -681,6 +687,11 @@ g:ctrlp_mru_files	ctrlp.txt	/*g:ctrlp_mru_files*
 g:ctrlp_open_multi	ctrlp.txt	/*g:ctrlp_open_multi*
 g:ctrlp_persistent_input	ctrlp.txt	/*g:ctrlp_persistent_input*
 g:ctrlp_regexp_search	ctrlp.txt	/*g:ctrlp_regexp_search*
+g:haskell_autotags	vim2hs.txt	/*g:haskell_autotags*
+g:haskell_tabular	vim2hs.txt	/*g:haskell_tabular*
+g:haskell_tags_generator	vim2hs.txt	/*g:haskell_tags_generator*
+g:hlint_args	vim2hs.txt	/*g:hlint_args*
+g:hpaste_author	vim2hs.txt	/*g:hpaste_author*
 g:localrc_filename	localrc.txt	/*g:localrc_filename*
 g:localrc_filetype	localrc.txt	/*g:localrc_filetype*
 g:neobundle#default_options	neobundle.txt	/*g:neobundle#default_options*
@@ -1089,6 +1100,9 @@ openbrowser.txt	openbrowser.txt	/*openbrowser.txt*
 ora	dbext.txt	/*ora*
 oracle	dbext.txt	/*oracle*
 pgsql	dbext.txt	/*pgsql*
+quickfix-cabal	vim2hs.txt	/*quickfix-cabal*
+quickfix-hlint	vim2hs.txt	/*quickfix-hlint*
+quickfix-jmacro	vim2hs.txt	/*quickfix-jmacro*
 quickrun	quickrun.txt	/*quickrun*
 quickrun#config()	quickrun.txt	/*quickrun#config()*
 quickrun#module#exists()	quickrun.txt	/*quickrun#module#exists()*
@@ -1512,6 +1526,12 @@ v_<Plug>TComment-<c-_>i	tcomment.txt	/*v_<Plug>TComment-<c-_>i*
 v_<Plug>TComment-ic	tcomment.txt	/*v_<Plug>TComment-ic*
 vgS	surround.txt	/*vgS*
 vim-colors-solarized	solarized.txt	/*vim-colors-solarized*
+vim2hs	vim2hs.txt	/*vim2hs*
+vim2hs-commands	vim2hs.txt	/*vim2hs-commands*
+vim2hs-compilers	vim2hs.txt	/*vim2hs-compilers*
+vim2hs-options	vim2hs.txt	/*vim2hs-options*
+vim2hs-tabular	vim2hs.txt	/*vim2hs-tabular*
+vim2hs.txt	vim2hs.txt	/*vim2hs.txt*
 vim_complete	neocomplcache.txt	/*vim_complete*
 vimproc	vimproc.txt	/*vimproc*
 vimproc#cmd#system()	vimproc.txt	/*vimproc#cmd#system()*
