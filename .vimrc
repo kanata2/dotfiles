@@ -40,11 +40,14 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 "Ruby, Ruby on Rails
 NeoBundle 'rails.vim'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
 "PHP
 NeoBundle 'violetyk/cake.vim'
 "DB
 NeoBundle 'dbext.vim'
+" Haskell
+NeoBundle 'kana/vim-filetype-haskell'
 
 
 "Required
@@ -75,8 +78,6 @@ set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
 
-" ヤンクした文字をシステムのクリップボードに入れる
-set clipboard=unnamed
 " 挿入モードでCtrl-kを押すとクリップボードの内容をはりつけられるようにする
 imap <C-p> <ESC>"*pa
 
@@ -84,7 +85,7 @@ imap <C-p> <ESC>"*pa
 imap <C-j> <esc>
 
 " TABキーを空白に
-set expandtab
+""set expandtab
 " 保存時にtabをスペースに変換
 " autocmdBufWritePre * :%s/\t/  /ge
 " ----------
@@ -160,16 +161,16 @@ syntax enable
 " editing
 " ----------
 " 括弧を自動補完
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi^V{<C-R>z}<ESC>
+"vnoremap [ "zdi^V[<C-R>z]<ESC>
+"vnoremap ( "zdi^V(<C-R>z)<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
 
 " -----------
 " complete
@@ -208,6 +209,13 @@ set hlsearch
 " ----------------
 " plugin's setting
 " ----------------
+"------------------------------------
+"" Emmet.vim
+"------------------------------------
+" en -> ja
+let g:user_emmet_settings = {
+      \  'lang' : 'ja'
+      \ }
 "------------------------------------
 "" vim-indent-guides
 "------------------------------------

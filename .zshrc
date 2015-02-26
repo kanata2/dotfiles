@@ -6,7 +6,8 @@ export PLAY_HOME=/usr/local/play-1.2.7
 export PATH=$PLAY_HOME:/opt/local/bin/:/opt/local/sbin:$PATH
 # OS
 export PATH=$PATH:/opt/os/bin
-#ruby
+#ruby on rails
+export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 #----------------------
 #general setting

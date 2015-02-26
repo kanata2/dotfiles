@@ -18,12 +18,14 @@ tcomment_vim
 vim-colors-solarized
 vim-css3-syntax
 vim-endwise
+vim-filetype-haskell
 vim-hybrid
 vim-indent-guides
 vim-javascript-syntax
 vim-localrc
 vim-lucius
 vim-quickrun
+vim-rails
 vim-surround
 vimproc
 webapi-vim
