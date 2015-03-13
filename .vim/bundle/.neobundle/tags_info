@@ -13,6 +13,7 @@ open-browser.vim
 phd
 rails.vim
 ref.vim
+sass-compile.vim
 taglist.vim
 tcomment_vim
 vim-colors-solarized

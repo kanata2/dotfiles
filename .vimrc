@@ -38,6 +38,7 @@ NeoBundle 'vim-scripts/phd'
 "HTML, CSS, JavaScript
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'AtsushiM/sass-compile.vim'
 "Ruby, Ruby on Rails
 NeoBundle 'rails.vim'
 NeoBundle 'tpope/vim-rails'
@@ -234,6 +235,14 @@ else
 	hi IndentGuidesOdd  ctermbg=white
 	hi IndentGuidesEven ctermbg=lightgrey
 endif
+
+"------------------------------------
+"" sass-compile.vim
+"------------------------------------
+" ファイル保存時に自動コンパイル
+let g:sass_compile_auto = 0
+" 自動コンパイルを実行する拡張子
+let g:sass_compile_file = ['scss', 'sass']
 
 ""----------------------------------------
 "" ユーザーランタイムパス設定
