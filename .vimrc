@@ -4,8 +4,9 @@
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	call neobundle#rc(expand('~/.vim/bundle/'))
 endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
@@ -51,6 +52,7 @@ NeoBundle 'dbext.vim'
 "NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'dag/vim2hs'
 
+call neobundle#end()
 
 "Required
 filetype plugin indent on
