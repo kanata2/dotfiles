@@ -11,6 +11,7 @@ neobundle.vim
 neocomplcache
 open-browser.vim
 phd
+previm
 rails.vim
 ref.vim
 sass-compile.vim
@@ -24,6 +25,7 @@ vim-indent-guides
 vim-javascript-syntax
 vim-localrc
 vim-lucius
+vim-markdown
 vim-quickrun
 vim-rails
 vim-surround

@@ -25,7 +25,6 @@ NeoBundle 'thinca/vim-localrc'
 NeoBundle 'Gist.vim'
 NeoBundle 'mattn/webapi-vim'
 "NeoBundle 'mattn/unite-advent_calendar'
-NeoBundle 'open-browser.vim'
 NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'nathanaelkane/vim-indent-guides' " indent に色付け
@@ -51,6 +50,10 @@ NeoBundle 'dbext.vim'
 " Haskell
 "NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'dag/vim2hs'
+" Markdown
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
@@ -245,6 +248,12 @@ endif
 let g:sass_compile_auto = 0
 " 自動コンパイルを実行する拡張子
 let g:sass_compile_file = ['scss', 'sass']
+
+"------------------------------------
+"" markdown
+"------------------------------------
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
 
 ""----------------------------------------
 "" ユーザーランタイムパス設定

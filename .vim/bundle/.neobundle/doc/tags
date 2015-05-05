@@ -298,6 +298,7 @@
 :OpenBrowserSearch	openbrowser.txt	/*:OpenBrowserSearch*
 :OpenBrowserSmartSearch	openbrowser.txt	/*:OpenBrowserSmartSearch*
 :PointFree	vim2hs.txt	/*:PointFree*
+:PrevimOpen	previm.txt	/*:PrevimOpen*
 :QuickRun	quickrun.txt	/*:QuickRun*
 :Ref	ref.txt	/*:Ref*
 :Ref-option	ref.txt	/*:Ref-option*
@@ -791,6 +792,10 @@ g:openbrowser_open_filepath_in_vim	openbrowser.txt	/*g:openbrowser_open_filepath
 g:openbrowser_open_rules	openbrowser.txt	/*g:openbrowser_open_rules*
 g:openbrowser_open_vim_command	openbrowser.txt	/*g:openbrowser_open_vim_command*
 g:openbrowser_search_engines	openbrowser.txt	/*g:openbrowser_search_engines*
+g:previm_custom_css_path	previm.txt	/*g:previm_custom_css_path*
+g:previm_disable_default_css	previm.txt	/*g:previm_disable_default_css*
+g:previm_enable_realtime	previm.txt	/*g:previm_enable_realtime*
+g:previm_open_cmd	previm.txt	/*g:previm_open_cmd*
 g:quickrun#default_config	quickrun.txt	/*g:quickrun#default_config*
 g:quickrun_config	quickrun.txt	/*g:quickrun_config*
 g:quickrun_no_default_key_mappings	quickrun.txt	/*g:quickrun_no_default_key_mappings*
@@ -1100,6 +1105,18 @@ openbrowser.txt	openbrowser.txt	/*openbrowser.txt*
 ora	dbext.txt	/*ora*
 oracle	dbext.txt	/*oracle*
 pgsql	dbext.txt	/*pgsql*
+previm#open()	previm.txt	/*previm#open()*
+previm#refresh()	previm.txt	/*previm#refresh()*
+previm-changelog	previm.txt	/*previm-changelog*
+previm-command	previm.txt	/*previm-command*
+previm-contents	previm.txt	/*previm-contents*
+previm-depends	previm.txt	/*previm-depends*
+previm-functions	previm.txt	/*previm-functions*
+previm-introduction	previm.txt	/*previm-introduction*
+previm-openbrowser	previm.txt	/*previm-openbrowser*
+previm-settings	previm.txt	/*previm-settings*
+previm-usage	previm.txt	/*previm-usage*
+previm.txt	previm.txt	/*previm.txt*
 quickfix-cabal	vim2hs.txt	/*quickfix-cabal*
 quickfix-hlint	vim2hs.txt	/*quickfix-hlint*
 quickfix-jmacro	vim2hs.txt	/*quickfix-jmacro*
