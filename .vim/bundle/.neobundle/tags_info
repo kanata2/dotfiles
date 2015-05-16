@@ -20,6 +20,7 @@ tcomment_vim
 vim-colors-solarized
 vim-css3-syntax
 vim-endwise
+vim-haml
 vim-hybrid
 vim-indent-guides
 vim-javascript-syntax

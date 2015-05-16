@@ -39,6 +39,7 @@ NeoBundle 'vim-scripts/phd'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'AtsushiM/sass-compile.vim'
+NeoBundle 'tpope/vim-haml'
 "Ruby, Ruby on Rails
 NeoBundle 'rails.vim'
 NeoBundle 'tpope/vim-rails'
