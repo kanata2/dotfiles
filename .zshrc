@@ -9,6 +9,8 @@ export PATH=$PATH:/opt/os/bin
 #ruby on rails
 export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
+#node
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 #----------------------
 #general setting
 #----------------------
