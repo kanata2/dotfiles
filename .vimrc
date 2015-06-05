@@ -40,6 +40,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'AtsushiM/sass-compile.vim'
 NeoBundle 'tpope/vim-haml'
+NeoBundle 'kchmck/vim-coffee-script'
 "Ruby, Ruby on Rails
 NeoBundle 'rails.vim'
 NeoBundle 'tpope/vim-rails'
@@ -131,9 +132,11 @@ if has("autocmd")
 	filetype plugin on
 	filetype indent on
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+  autocmd BufRead,BufNewFile *.coffee set filetype=coffee
 	autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et	
 	autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et	
 	autocmd FileType c			    setlocal sw=4 sts=4 ts=4 et	
+	autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et	
 	autocmd FileType cpp				setlocal sw=4 sts=4 ts=4 et	
 	autocmd FileType cs			    setlocal sw=4 sts=4 ts=4 et	
 	autocmd FileType css		    setlocal sw=2 sts=2 ts=2 et	
