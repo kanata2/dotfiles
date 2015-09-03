@@ -10,8 +10,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'ujihisa/unite-locate'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'taglist.vim'
