@@ -1,4 +1,4 @@
-DOT_FILES = .zshrc .vimrc .vim .irbrc .gitconfig .vrapperrc .gemrc
+DOT_FILES = .zshrc .vimrc .vim .irbrc .gitconfig .vrapperrc .gemrc .gitconfig.local
 
 all: zsh vim irb git vrapper gem
 

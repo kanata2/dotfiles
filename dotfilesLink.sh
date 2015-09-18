@@ -5,3 +5,4 @@ ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.irbrc ~/.irbrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/.gitconfig.local/.gitconfig.local
