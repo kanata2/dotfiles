@@ -72,3 +72,36 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# proxy auto change
+proxy=http://131.112.125.238:3128
+swich_trigger=titech-pubnet
+
+function usage() {
+cat <<_EOF_
+Usage:
+  ./swich_trigger
+Description:
+  titech-pubnetのときにプロキシ設定を有効にする.
+
+Options:
+
+_EOF_
+exit 1
+}
+
+function set_proxy() {
+  git config --global include.path .gitconfig.local
+}
+
+function unset_proxy() {
+  git config --global --unset include.path
+}
+
+if [ "`networksetup -getcurrentlocation`" = "${switch_trigger}" ]; then
+  echo "Switch to proxy for titech-pubnet"
+  set_proxy
+else
+  unset_proxy
+fi
+
+
