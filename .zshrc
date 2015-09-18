@@ -71,3 +71,4 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
