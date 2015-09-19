@@ -73,8 +73,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # proxy auto change
-proxy=http://131.112.125.238:3128
-swich_trigger=titech-pubnet
+switch_trigger=titech-pubnet # アクセスポイント名
 
 function usage() {
 cat <<_EOF_
@@ -97,7 +96,7 @@ function unset_proxy() {
   git config --global --unset include.path
 }
 
-if [ "`networksetup -getcurrentlocation`" = "${switch_trigger}" ]; then
+if [ "`networksetup -getairportnetwork en0 | awk '{print $4}'`" = "$switch_trigger" ]; then
   echo "Switch to proxy for titech-pubnet"
   set_proxy
 else
