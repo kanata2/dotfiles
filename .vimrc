@@ -55,6 +55,8 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+" Swift
+NeoBundle 'toyamarinyon/vim-swift'
 
 call neobundle#end()
 
