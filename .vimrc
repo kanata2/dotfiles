@@ -21,7 +21,9 @@ NeoBundle 'The-NERD-Commenter'
 NeoBundle 'tpope/vim-fugitive'
 
 " ステータスラインをカッコよくする
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 " インデントに色付け
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -195,6 +197,7 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 " ----------
 " editing
 " ----------
+
 " 括弧を自動補完
 "inoremap { {}<LEFT>
 "inoremap [ []<LEFT>
@@ -207,8 +210,34 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 "vnoremap " "zdi^V"<C-R>z^V"<ESC>
 "vnoremap ' "zdi'<C-R>z'<ESC>
 
+
+" ----------
+"  move
+" ----------
+
+" 0, 9 で行頭、行末へ
+nmap 1 0
+nmap 0 ^
+nmap 9 $
+
+" 前回終了したカーソル行に移動
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" カーソル位置の単語を yank
+nnoremap vy vawy
+
 " ESC割り当て
-imap <C-j> <esc>
+imap <C-j> <ESC>
+
+" ファイルを開いた時に前回のカーソル位置に
+augroup vimrcEx
+	autocmd!
+	autocmd BufReadPost *
+				\ if line("'\"") > 1 && line("'\"") <= line('$') |
+				\   exe "normal! g`\"" |
+				\ endif
+augroup END
+
 " -----------
 " complete
 " -----------
@@ -284,255 +313,9 @@ let g:sass_compile_file = ['scss', 'sass']
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Firefox'
 
-""----------------------------------------
-"" ユーザーランタイムパス設定
-""----------------------------------------
-""Windows, unixでのruntimepathの違いを吸収するためのもの。 
-""$MY_VIMRUNTIMEはユーザーランタイムディレクトリを示す。 
-"":echo $MY_VIMRUNTIMEで実際のパスを確認できます。 
-"if isdirectory($HOME . '/.vim') 
-"	let $MY_VIMRUNTIME = $HOME.'/.vim' 
-"elseif isdirectory($HOME . '\vimfiles') 
-"	let $MY_VIMRUNTIME = $HOME.'\vimfiles' 
-"elseif isdirectory($VIM . '\vimfiles') 
-"	let $MY_VIMRUNTIME = $VIM.'\vimfiles' 
-"endif 
-""ランタイムパスを通す必要のあるプラグインを使用する場合
-""$MY_VIMRUNTIMEを使用すると Windows/Linuxで切り分ける必要が無くなります。 
-""例) vimfiles/qfixapp (Linuxでは~/.vim/qfixapp)にランタイムパスを通す場合 
-""set runtimepath+=$MY_VIMRUNTIME/qfixapp
-"
-""----------------------------------------
-"" システム設定
-""----------------------------------------
-"
-""バックアップは上書きに成功した後に削除される。
-"set nowritebackup
-""バックアップ/スワップファイルを作成する/しない
-"set nobackup
-"set noswapfile
-""viminfoを作成しない
-""set viminfo=
-""クリップボードを共有
-"set clipboard+=unnamed
-""8進数を無効にする。<C-a>,<C-x>に影響する
-"set nrformats-=octal
-""キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
-"set timeoutlen=3500
-""編集結果非保存のバッファから、新しいバッファを開くときに警告を出さない
-"set hidden
-""ヒストリの保存数
-"set history=50
-""日本語の行の連結時には空白を入力しない
-"set formatoptions+=mM
-""Visual blockモードでフリーカーソルを有効にする
-"set virtualedit=block
-""カーソルキーで行末／行頭の移動可能に設定
-"set whichwrap=b,s,[,],<,>
-""バックスペースでインデントや改行を削除できるようにする
-"set backspace=indent,eol,start
-""□や○の文字があってもカーソル位置がずれないようにする
-"set ambiwidth=double
-""コマンドライン補完するときに強化されたものを使う
-"set wildmenu
-""マウスを有効にする
-"if has('mouse')
-"	set mouse=a
-"endif
-""pluginを使用可能にする
-"filetype plugin indent on
-""ESC割り当て
-"imap <C-j> <esc>
-"
-"
-""----------------------------------------
-"" 検索
-""----------------------------------------
-""検索の時に大文字小文字を区別しない
-""ただし大文字小文字の両方が含まれている場合は大文字小文字を区別する
-"set ignorecase
-"set smartcase
-""検索時にファイルの最後まで行ったら最初に戻る
-"set wrapscan
-""インクリメンタルサーチ
-"set incsearch
-""検索文字の強調表示
-"set hlsearch
-""w,bの移動で認識する文字
-""set iskeyword=a-z,A-Z,48-57,_,.,-,>
-""vimgrep をデフォルトのgrepとする場合internal
-""set grepprg=internal
-"
-""----------------------------------------
-"" 表示設定
-""----------------------------------------
-""スプラッシュ(起動時のメッセージ)を表示しない
-""set shortmess+=I
-""エラー時の音とビジュアルベルの抑制(gvimは.gvimrcで設定)
-"set noerrorbells
-"set novisualbell
-"set visualbell t_vb=
-""マクロ実行中などの画面再描画を行わない
-""set lazyredraw
-""Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
-"set shellslash
-""行番号表示
-"set number
-""カーソル行の背景色を変える
-"set cursorline
-""括弧の対応表示時間
-"set showmatch matchtime=1
-""不可視文字を表示
-""set list
-""不可視文字の表示記号指定
-""setlistchars=tab: ,eol: 
-""set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
-""タブを設定
-""set ts=4 sw=4 sts=4
-"set tabstop=2
-"set shiftwidth=2
-""set expandtab
-""自動的にインデントする
-"set autoindent
-""Cインデントの設定
-"set cinoptions+=:0
-""タイトルを表示
-"set title
-""コマンドラインの高さ (gvimはgvimrcで指定)
-"set cmdheight=2
-"set laststatus=2
-""コマンドをステータス行に表示
-"set showcmd
-""画面最後の行をできる限り表示する
-"set display=lastline
-"
-""色テーマ設定
-""gvimの色テーマは.gvimrcで指定する
-"syntax enable
-"set background=dark
-""colorscheme solarized
-"colorscheme hybrid
-"
-""vim の立ち上げ時にindent-guidesをオン
-""let g:indent_guides_enable_on_vim_starup = 1
-"
-"""""""""""""""""""""""""""""""
-""ステータスラインに文字コードやBOM、16進表示等表示
-""iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
-"""""""""""""""""""""""""""""""
-"if has('iconv')
-"	set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
-"else
-"	set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
-"endif
-"
-"function! FencB()
-"	let c = matchstr(getline('.'), '.', col('.') - 1)
-"	let c = iconv(c, &enc, &fenc)
-"	return s:Byte2hex(s:Str2byte(c))
-"endfunction
-"
-"function! s:Str2byte(str)
-"	return map(range(len(a:str)), 'char2nr(a:str[v:val])')
-"endfunction
-"
-"function! s:Byte2hex(bytes)
-"	return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
-"endfunction
-"
-""----------------------------------------
-"" diff/patch
-""----------------------------------------
-"" diffの設定
-"if has('win95') || has('win16') || has('win32') || has('win64')
-"	set diffexpr=MyDiff()
-"	function! MyDiff()
-"		silent! let saved_sxq=&shellxquote
-"		silent! set shellxquote=
-"		let opt = '-a --binary '
-"		if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"		if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"		let arg1 = v:fname_in
-"		if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"		let arg2 = v:fname_new
-"		if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"		let arg3 = v:fname_out
-"		if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"		" let cmd = '!diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-"		let cmd = '!""' . $VIM . '\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
-"		silent exe cmd
-"		silent! let &shellxquote = saved_sxq
-"	endfunction
-"endif
-""現バッファの差分表示(変更箇所の表示)
-"command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
-""ファイルまたはバッファ番号を指定して差分表示。#なら裏バッファと比較
-"command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffsplit|else| vertical diffsplit <args>|endif
-""パッチコマンド
-"set patchexpr=MyPatch()
-"function! MyPatch()
-"	:call system($VIM."\\'.'patch -o " . v:fname_out . " " . v:fname_in . " < " . v:fname_diff)
-"endfunction
-"
-""----------------------------------------
-"" ノーマルモード
-""----------------------------------------
-""ヘルプ検索
-"nnoremap <F1> K
-""現在開いているvimスクリプトファイルを実行
-"nnoremap <F8> :source %<CR>
-""強制全保存終了を無効化
-"nnoremap ZZ <Nop>
-""カーソルをj k では表示行で移動する。物理行移動は<C-n>,<C-p>
-""キーボードマクロには物理行移動を推奨
-""h l はノーマルモードのみ行末、行頭を超えることが可能に設定(whichwrap) 
-"" zvはカーソル位置の折り畳みを開くコマンド
-"nnoremap <Down> gj
-"nnoremap <Up>   gk
-"nnoremap h <Left>zv
-"nnoremap j gj
-"nnoremap k gk
-"nnoremap l <Right>zv
-"
-""taglist.vim
-"set tags=tags
-"let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"  " ctagsのコマンド
-"let Tlist_Show_One_File = 1							" 現在表示中のファイルのみのタグしか表示しない
-"let Tlist_Use_Right_Window = 1          " 右側にtag listのウインドうを表示する
-"let Tlist_Exit_OnlyWindow = 1           " taglistのウインドウだけならVimを閉じる
-"map <silent> <leader>l :TlistToggle<CR> 
-""\lでtaglistウインドウを開いたり閉じたり出来るショートカット
-""----------------------------------------
-"" 挿入モード
-""----------------------------------------
-"
-"
-"
-""----------------------------------------
-"" ビジュアルモード
-""----------------------------------------
-"
-""----------------------------------------
-"" コマンドモード
-""----------------------------------------
-"
-"----------------------------------------
-" Vimスクリプト
-"----------------------------------------
-""""""""""""""""""""""""""""""
-"ファイルを開いたら前回のカーソル位置へ移動
-""""""""""""""""""""""""""""""
-augroup vimrcEx
-	autocmd!
-	autocmd BufReadPost *
-				\ if line("'\"") > 1 && line("'\"") <= line('$') |
-				\   exe "normal! g`\"" |
-				\ endif
-augroup END
-
-""""""""""""""""""""""""""""""
-"挿入モード時、ステータスラインの色を変更
-""""""""""""""""""""""""""""""
+" ----------------------------------------
+" 挿入モード時、ステータスラインの色を変更
+" ---------------------------------------- 
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
@@ -542,10 +325,6 @@ if has('syntax')
 		autocmd InsertLeave * call s:StatusLine('Leave')
 	augroup END
 endif
-" if has('unix') && !has('gui_running')
-"   " ESCでキー入力待ちになる対策
-"   inoremap <silent> <ESC> <ESC>
-" endif
 
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
@@ -568,9 +347,9 @@ function! s:GetHighlight(hi)
 	return hl
 endfunction
 
-""""""""""""""""""""""""""""""
-"全角スペースを表示
-""""""""""""""""""""""""""""""
+" ---------------------------
+" 全角スペースを表示
+" ---------------------------
 "コメント以外で全角スペースを指定しているので、scriptencodingと、
 "このファイルのエンコードが一致するよう注意！
 "強調表示されない場合、ここでscriptencodingを指定するとうまくいく事があります。
