@@ -97,23 +97,17 @@ set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
 
+" ヤンクした文字をシステムのクリップボードへ
+set clipboard=unnamed
 " 挿入モードでCtrl-kを押すとクリップボードの内容をはりつけられるようにする
 imap <C-p> <ESC>"*pa
 
-" ESC割り当て
-imap <C-j> <esc>
 
-" TABキーを空白に
-""set expandtab
-" 保存時にtabをスペースに変換
-" autocmdBufWritePre * :%s/\t/  /ge
 " ----------
 " statusline
 " ----------
 set laststatus=2	" 常にステータスラインを表示
 set ruler 				" カーソル位置を表示
-
-
 
 " ----------
 " Appearance
@@ -178,7 +172,25 @@ endif
 " color
 " ----------
 colorscheme hybrid
+
+" ターミナルのタイプによるカラー設定
+if &term =~ "xterm-256color" || "screen-256color"
+  set t_Co=256
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+elseif &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
+  set t_Co=16
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+elseif &term =~ "xterm-color"
+  set t_Co=8
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+endif
+
+" ハイライト on
 syntax enable
+hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
 
 " ----------
 " editing
@@ -195,6 +207,8 @@ syntax enable
 "vnoremap " "zdi^V"<C-R>z^V"<ESC>
 "vnoremap ' "zdi'<C-R>z'<ESC>
 
+" ESC割り当て
+imap <C-j> <esc>
 " -----------
 " complete
 " -----------
