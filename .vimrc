@@ -10,51 +10,60 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'ujihisa/unite-locate'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'taglist.vim'
-"NeoBundle 'ZenCoding.vim'
-NeoBundle 'ref.vim'
+
+" tree
 NeoBundle 'The-NERD-tree'
 NeoBundle 'The-NERD-Commenter'
-NeoBundle 'fugitive.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-localrc'
-NeoBundle 'Gist.vim'
-NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'mattn/unite-advent_calendar'
-NeoBundle 'ctrlp.vim'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'nathanaelkane/vim-indent-guides' " indent に色付け
+
+" vimからGit操作する
+NeoBundle 'tpope/vim-fugitive'
+
+" ステータスラインをカッコよくする
+NeoBundle 'Lokaltog/vim-powerline'
+
+" インデントに色付け
+NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
+
+" vimdoc 日本語
+NeoBundle 'yuroyoro/vimdoc_ja'
+
+" vim上のtwitter client
+NeoBundle 'TwitVim'
+
 "Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'djjcast/mirodark'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/phd'
+
 "HTML, CSS, JavaScript
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'AtsushiM/sass-compile.vim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'jelera/vim-javascript-syntax'
+
 "Ruby, Ruby on Rails
 NeoBundle 'rails.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
-"PHP
-NeoBundle 'violetyk/cake.vim'
+
 "DB
 NeoBundle 'dbext.vim'
 " Haskell
 "NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'dag/vim2hs'
+
 " Markdown
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+
 " Swift
 NeoBundle 'toyamarinyon/vim-swift'
 
