@@ -1,16 +1,19 @@
 
-#emacs
+# emacs
 PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH
-#Play! 1.2.7
+# Play! 1.2.7
 export PLAY_HOME=/usr/local/play-1.2.7
 export PATH=$PLAY_HOME:/opt/local/bin/:/opt/local/sbin:$PATH
 # OS
 export PATH=$PATH:/opt/os/bin
-#ruby on rails
+# ruby
 export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
-#node
+# node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+# go
+export GOROOT=/usr/local/opt/go/libexec/
+export GOPATH=$HOME/Work/go
 #----------------------
 #general setting
 #----------------------
