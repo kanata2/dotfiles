@@ -3,7 +3,7 @@
 "----------------------------------------------------
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -70,7 +70,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'toyamarinyon/vim-swift'
 
 " Golang
-NeoBundle 'fatih/vim-go'
+NeoBundle 'vim-jp/vim-go-extra'
 
 call neobundle#end()
 
@@ -78,6 +78,7 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
 " ---------
 " Basic
 " ---------
@@ -138,45 +139,46 @@ set cindent				" Cプログラムファイルの自動インデント
 "
 set tabstop=2 shiftwidth=2 softtabstop=0
 if has("autocmd")
-	filetype plugin on
-	filetype indent on
+  filetype plugin on
+  filetype indent on
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
-	autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType c			    setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType cpp				setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType cs			    setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType css		    setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType diff     	setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType eruby     	setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType html     	setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType java    		setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType javascript	setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType perl  	  	setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType php    	 	setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType python     setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType ruby	     	setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType haml				setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType scheme 		setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType sh					setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType sql				setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType vb					setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType vim				setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType wsh				setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType xhtml			setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType xml				setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType yaml				setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType zsh				setlocal sw=4 sts=4 ts=4 et	
-	autocmd FileType scala			setlocal sw=2 sts=2 ts=2 et	
-	autocmd FileType go					setlocal noexpandtab list tabstop=2 shiftwidth=2
+  autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType c			    setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType cpp				setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType cs			    setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType css		    setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType diff     	setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType eruby     	setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType html     	setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType java    		setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType javascript	setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType perl  	  	setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType php    	 	setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType python     setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType ruby	     	setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType haml				setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType scheme 		setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType sh					setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType sql				setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType vb					setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType vim				setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType wsh				setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType xhtml			setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType xml				setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType yaml				setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType zsh				setlocal sw=4 sts=4 ts=4 et	
+  autocmd FileType scala			setlocal sw=2 sts=2 ts=2 et	
+  autocmd FileType go					setlocal noexpandtab list tabstop=4 shiftwidth=4
 endif
 
 " ----------
 " color
 " ----------
 colorscheme hybrid
+"colorscheme solarized
 
 " ターミナルのタイプによるカラー設定
 if &term =~ "xterm-256color" || "screen-256color"
@@ -196,6 +198,9 @@ endif
 " ハイライト on
 syntax enable
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+" golang の err を色付け
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
 
 " ----------
 " editing
@@ -218,28 +223,30 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 "  move
 " ----------
 
-" 0, 9 で行頭、行末へ
-nmap 1 0
-nmap 0 ^
-nmap 9 $
+" カーソルが行末にあるときにインサートからノーマルに
+" なってしまうので一旦コメントアウト
+" カーソルから行頭まで削除(インサートモード)
+"inoremap <silent> <C-d> <Esc>lc^
+" カーソルから行末まで削除(インサートモード)
+"inoremap <silent> <C-f> <Esc>lc$
 
-" 前回終了したカーソル行に移動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+" insert mode での移動
+inoremap  <C-e> <END>
+inoremap  <C-a> <HOME>
+" インサートモードでもhjklで移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " カーソル位置の単語を yank
 nnoremap vy vawy
 
 " ESC割り当て
-imap <C-j> <ESC>
+"imap <C-j> <ESC>
 
-" ファイルを開いた時に前回のカーソル位置に
-augroup vimrcEx
-	autocmd!
-	autocmd BufReadPost *
-				\ if line("'\"") > 1 && line("'\"") <= line('$') |
-				\   exe "normal! g`\"" |
-				\ endif
-augroup END
+" 前回終了したカーソル行に移動
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 " -----------
 " complete
@@ -295,20 +302,12 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 if 'dark' == &background
-	hi IndentGuidesOdd  ctermbg=black
-	hi IndentGuidesEven ctermbg=darkgrey
+  hi IndentGuidesOdd  ctermbg=black
+  hi IndentGuidesEven ctermbg=darkgrey
 else
-	hi IndentGuidesOdd  ctermbg=white
-	hi IndentGuidesEven ctermbg=lightgrey
+  hi IndentGuidesOdd  ctermbg=white
+  hi IndentGuidesEven ctermbg=lightgrey
 endif
-
-"------------------------------------
-"" sass-compile.vim
-"------------------------------------
-" ファイル保存時に自動コンパイル
-let g:sass_compile_auto = 0
-" 自動コンパイルを実行する拡張子
-let g:sass_compile_file = ['scss', 'sass']
 
 "------------------------------------
 "" markdown
@@ -316,60 +315,37 @@ let g:sass_compile_file = ['scss', 'sass']
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Firefox'
 
-" ----------------------------------------
-" 挿入モード時、ステータスラインの色を変更
-" ---------------------------------------- 
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+"" ----------------------------------------
+"" 挿入モード時、ステータスラインの色を変更
+"""" ---------------------------------------- 
+"let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+"
+"if has('syntax')
+"  augroup InsertHook
+"    autocmd!
+"    autocmd InsertEnter * call s:StatusLine('Enter')
+"    autocmd InsertLeave * call s:StatusLine('Leave')
+"  augroup END
+"endif
+"
+"let s:slhlcmd = ''
+"function! s:StatusLine(mode)
+"  if a:mode == 'Enter'
+"    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+"    silent exec g:hi_insert
+"  else
+"    highlight clear StatusLine
+"    silent exec s:slhlcmd
+"    redraw
+"  endif
+"endfunction
+"
+"function! s:GetHighlight(hi)
+"  redir => hl
+"  exec 'highlight '.a:hi
+"  redir END
+"  let hl = substitute(hl, '[\r\n]', '', 'g')
+"  let hl = substitute(hl, 'xxx', '', '')
+"  return hl
+"endfunction
 
-if has('syntax')
-	augroup InsertHook
-		autocmd!
-		autocmd InsertEnter * call s:StatusLine('Enter')
-		autocmd InsertLeave * call s:StatusLine('Leave')
-	augroup END
-endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-	if a:mode == 'Enter'
-		silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-		silent exec g:hi_insert
-	else
-		highlight clear StatusLine
-		silent exec s:slhlcmd
-		redraw
-	endif
-endfunction
-
-function! s:GetHighlight(hi)
-	redir => hl
-	exec 'highlight '.a:hi
-	redir END
-	let hl = substitute(hl, '[\r\n]', '', 'g')
-	let hl = substitute(hl, 'xxx', '', '')
-	return hl
-endfunction
-
-" ---------------------------
-" 全角スペースを表示
-" ---------------------------
-"コメント以外で全角スペースを指定しているので、scriptencodingと、
-"このファイルのエンコードが一致するよう注意！
-"強調表示されない場合、ここでscriptencodingを指定するとうまくいく事があります。
-"scriptencoding cp932
-
-"デフォルトのZenkakuSpaceを定義
-function! ZenkakuSpace()
-	highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-endfunction
-
-if has('syntax')
-	augroup ZenkakuSpace
-		autocmd!
-		" ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
-		autocmd ColorScheme       * call ZenkakuSpace()
-		" 全角スペースのハイライト指定
-		autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-	augroup END
-	call ZenkakuSpace()
-endif
