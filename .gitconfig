@@ -8,3 +8,9 @@
 [push]
 	default = current
 [include]
+[include]
+[include]
+[include]
+[include]
+[include]
+	path = .gitconfig.local
