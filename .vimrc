@@ -41,6 +41,7 @@ NeoBundle 'djjcast/mirodark'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/phd'
+NeoBundle 'ciaranm/inkpot'
 
 "HTML, CSS, JavaScript
 NeoBundle 'mattn/emmet-vim'
