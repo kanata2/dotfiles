@@ -1,6 +1,6 @@
 [user]
 	name = naoki-k
-	email = amnrnmng7cy@gmail.com
+	email = k12naoki@gmail.com
 [core]
 	excludesfile = /Users/kanataninaoki/.gitignore_global
 [alias]
@@ -8,9 +8,3 @@
 [push]
 	default = current
 [include]
-[include]
-[include]
-[include]
-[include]
-[include]
-	path = .gitconfig.local
