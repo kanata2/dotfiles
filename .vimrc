@@ -22,7 +22,7 @@ NeoBundle 'The-NERD-Commenter'
 NeoBundle 'tpope/vim-fugitive'
 
 " ステータスラインをカッコよくする
-NeoBundle 'alpaca-tc/alpaca_powertabline'
+"NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
@@ -118,8 +118,8 @@ imap <C-p> <ESC>"*pa
 " ----------
 " statusline
 " ----------
-set laststatus=2	" 常にステータスラインを表示
 set ruler 				" カーソル位置を表示
+set laststatus=2
 
 " ----------
 " Appearance
@@ -134,7 +134,6 @@ set ttyfast				" 高速ターミナル接続
 set cursorline		" カーソル行ハイライト
 " コマンドラインの高さ
 set cmdheight=2
-set laststatus=2
 
 " ----------
 " indent
@@ -208,6 +207,7 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 " golang の err を色付け
 autocmd FileType go :highlight goErr cterm=bold ctermfg=214
 autocmd FileType go :match goErr /\<err\>/
+
 
 " ----------
 " editing

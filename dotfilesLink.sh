@@ -6,3 +6,4 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.irbrc ~/.irbrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/.gitconfig.local/.gitconfig.local
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
