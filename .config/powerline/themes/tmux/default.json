@@ -10,8 +10,7 @@
 			{
 				"function": "powerline.segments.common.wthr.weather",
 				"args": {
-					"unit": "C",
-					"location_query": "meguro, tokyo"
+					"unit": "C"
 				}
 			},
 			{
