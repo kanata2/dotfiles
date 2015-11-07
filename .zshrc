@@ -1,3 +1,5 @@
+# Mac のキーボードショートカットを使いたい(emacs-likeらしい)
+bindkey -e
 
 # emacs
 PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH
