@@ -8,3 +8,5 @@ ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/.gitconfig.local/.gitconfig.local
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.config/powerline ~/.config/powerline
+ln -s ~/dotfiles/.latexmkrc ~/.latexmkrc
+
