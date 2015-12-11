@@ -75,6 +75,9 @@ NeoBundle 'toyamarinyon/vim-swift'
 " Golang
 NeoBundle 'vim-jp/vim-go-extra'
 
+" TeX
+NeoBundle 'lervag/vimtex'
+
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
@@ -111,8 +114,8 @@ set ttymouse=xterm2
 
 " ヤンクした文字をシステムのクリップボードへ
 set clipboard=unnamed
-" 挿入モードでCtrl-kを押すとクリップボードの内容をはりつけられるようにする
-imap <C-p> <ESC>"*pa
+" 挿入モードでCtrl-vを押すとクリップボードの内容をはりつけられるようにする
+imap <C-v> <ESC>"*pa
 
 
 " ----------
@@ -320,7 +323,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-o>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -332,8 +335,8 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" <C-p>, <BS>: close popup and delete backword char.
+"inoremap <expr><C-p> neocomplete#smart_close_popup()."\<C-p>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
@@ -393,7 +396,8 @@ endif
 "" markdown
 "------------------------------------
 au BufRead,BufNewFile *.md set filetype=markdown
-let g:previm_open_cmd = 'open -a Firefox'
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+let g:vim_markdown_folding_disabled=1
 
 "" ----------------------------------------
 "" 挿入モード時、ステータスラインの色を変更
