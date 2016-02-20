@@ -15,7 +15,7 @@ eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # go
 export GOPATH=$HOME/Work/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 #----------------------
 #general setting
 #----------------------
