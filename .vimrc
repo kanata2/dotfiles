@@ -1,7 +1,6 @@
 "----------------------------------------------------
 "" neobundle.vim
 "----------------------------------------------------
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -150,6 +149,7 @@ if has("autocmd")
   filetype plugin on
   filetype indent on
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+  autocmd BufRead,BufNewFile *.vue set filetype=html
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et	
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et	
@@ -179,7 +179,7 @@ if has("autocmd")
   autocmd FileType yaml				setlocal sw=2 sts=2 ts=2 et	
   autocmd FileType zsh				setlocal sw=4 sts=4 ts=4 et	
   autocmd FileType scala			setlocal sw=2 sts=2 ts=2 et	
-  autocmd FileType go					setlocal noexpandtab list tabstop=4 shiftwidth=4
+  autocmd FileType go					setlocal sw=4 sts=4 ts=4 et noexpandtab
 endif
 
 " ----------
@@ -211,11 +211,9 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 autocmd FileType go :highlight goErr cterm=bold ctermfg=214
 autocmd FileType go :match goErr /\<err\>/
 
-
 " ----------
 " editing
 " ----------
-
 " 括弧を自動補完
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -228,18 +226,9 @@ vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 
-
 " ----------
 "  move
 " ----------
-
-" カーソルが行末にあるときにインサートからノーマルに
-" なってしまうので一旦コメントアウト
-" カーソルから行頭まで削除(インサートモード)
-"inoremap <silent> <C-d> <Esc>lc^
-" カーソルから行末まで削除(インサートモード)
-"inoremap <silent> <C-f> <Esc>lc$
-
 " insert mode での移動
 inoremap  <C-e> <END>
 inoremap  <C-a> <HOME>
@@ -295,9 +284,7 @@ set hlsearch
 " ----------------
 " plugin's setting
 " ----------------
-" -----------
 " neocomplete
-" -----------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -368,6 +355,7 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
 "------------------------------------
 "" Emmet.vim
 "------------------------------------
@@ -375,6 +363,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:user_emmet_settings = {
       \  'lang' : 'ja'
       \ }
+
 "------------------------------------
 "" vim-indent-guides
 "------------------------------------
@@ -398,38 +387,3 @@ endif
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Google\ Chrome'
 let g:vim_markdown_folding_disabled=1
-
-"" ----------------------------------------
-"" 挿入モード時、ステータスラインの色を変更
-"""" ---------------------------------------- 
-"let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-"
-"if has('syntax')
-"  augroup InsertHook
-"    autocmd!
-"    autocmd InsertEnter * call s:StatusLine('Enter')
-"    autocmd InsertLeave * call s:StatusLine('Leave')
-"  augroup END
-"endif
-"
-"let s:slhlcmd = ''
-"function! s:StatusLine(mode)
-"  if a:mode == 'Enter'
-"    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-"    silent exec g:hi_insert
-"  else
-"    highlight clear StatusLine
-"    silent exec s:slhlcmd
-"    redraw
-"  endif
-"endfunction
-"
-"function! s:GetHighlight(hi)
-"  redir => hl
-"  exec 'highlight '.a:hi
-"  redir END
-"  let hl = substitute(hl, '[\r\n]', '', 'g')
-"  let hl = substitute(hl, 'xxx', '', '')
-"  return hl
-"endfunction
-
