@@ -8,10 +8,12 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'taglist.vim'
+
+" コード補完
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 " tree
 NeoBundle 'The-NERD-tree'
@@ -20,20 +22,12 @@ NeoBundle 'The-NERD-Commenter'
 " vimからGit操作する
 NeoBundle 'tpope/vim-fugitive'
 
-" ステータスラインをカッコよくする
-"NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Lokaltog/powerline-fontpatcher'
+" statusline
+NeoBundle 'itchyny/lightline.vim'
 
 " インデントに色付け
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
-
-" vimdoc 日本語
-NeoBundle 'yuroyoro/vimdoc_ja'
-
-" vim上のtwitter client
-NeoBundle 'TwitVim'
 
 "Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
@@ -59,9 +53,10 @@ NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
 
 "DB
 NeoBundle 'dbext.vim'
+
 " Haskell
-"NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'dag/vim2hs'
+NeoBundle 'kana/vim-filetype-haskell'
+NeoBundle 'ujihisa/neco-ghc'
 
 " Markdown
 NeoBundle 'plasticboy/vim-markdown'
@@ -72,13 +67,14 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'toyamarinyon/vim-swift'
 
 " Golang
-NeoBundle 'vim-jp/vim-go-extra'
-
+NeoBundle 'fatih/vim-go'
+NeoBundle 'jnwhiteh/vim-golang'
 " TeX
 NeoBundle 'lervag/vimtex'
 
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
+" Others
+NeoBundle 'elzr/vim-json'
+NeoBundle 'cespare/vim-toml'
 
 call neobundle#end()
 
