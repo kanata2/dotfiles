@@ -1,24 +1,8 @@
-# Mac のキーボードショートカットを使いたい(emacs-likeらしい)
-bindkey -e
 
-# emacs
-PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH
-# Play! 1.2.7
-export PLAY_HOME=/usr/local/play-1.2.7
-export PATH=$PLAY_HOME:/opt/local/bin/:/opt/local/sbin:$PATH
-# OS
-export PATH=$PATH:/opt/os/bin
-# ruby
-export PATH=$HOME/.rbenv/shims:$PATH
-eval "$(rbenv init -)"
-# node
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-# go
-export GOPATH=$HOME/Work/go
-export PATH=$PATH:$GOPATH/bin
 #----------------------
 #general setting
 #----------------------
+bindkey -e
 export EDITOR=vim				#エディタをvimに設定
 export LANG=ja_JP.UTF-8	#文字コードをUTF-8に設定
 
@@ -57,7 +41,7 @@ autoload -U colors; colors
 #一般ユーザ時
 #tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt="%{${fg[cyan]}%}%(?!(╹◡╹) <!_(:3」∠ %)_ <) %{${reset_color}%}"
-tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+tmp_prompt2="%{${fg[cyan]}%}%_< %{${reset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
@@ -74,38 +58,6 @@ PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# proxy auto change
-switch_trigger=titech-pubnet # アクセスポイント名
-
-function usage() {
-cat <<_EOF_
-Usage:
-  ./swich_trigger
-Description:
-  titech-pubnetのときにプロキシ設定を有効にする.
-
-Options:
-
-_EOF_
-exit 1
-}
-
-function set_proxy() {
-  git config --global include.path .gitconfig.local
-}
-
-function unset_proxy() {
-  git config --global --unset include.path
-}
-
-if [ "`networksetup -getairportnetwork en0 | awk '{print $4}'`" = "$switch_trigger" ]; then
-  echo "Switch to proxy for titech-pubnet"
-  set_proxy
-else
-  unset_proxy
-fi
-
-
+source ~/.zsh/titech.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
