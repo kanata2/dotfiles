@@ -2,3 +2,4 @@
 .vim/plugged/*
 .vim/ftplugin/*
 .gitconfig.local
+.zshrc.local
