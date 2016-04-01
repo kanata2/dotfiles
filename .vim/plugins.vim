@@ -8,6 +8,8 @@ Plug 'Shougo/neosnippet-snippets'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'itchyny/lightline.vim'
+
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomtom/tcomment_vim'
 
