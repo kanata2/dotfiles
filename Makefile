@@ -1,26 +1,31 @@
-DOT_FILES = .zshrc .vimrc .vim .irbrc .gitconfig .vrapperrc .gemrc .gitconfig.local
+PATH       := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+FILES      := $(wildcard .??*)
+EXCLUSIONS := .DS_Store .git .gitmodules
+DOTFILES   := $(filter-out $(EXCLUSIONS), $(FILES))
 
-all: zsh vim irb git vrapper gem
+all: install
 
-zsh: $(foreach f, $(filter .zsh%, $(DOT_FILES)), link-dot-file-$(f))
+help:
+	@echo "make list    : Show dotfiles in this repository"
+	@echo "make link    : Create symlink to home directory"
+	@echo "make update  : Fetch changes for this repositry"
+	@echo "make install : Run make update, deploy"
+	@echo "make clean   : Remove symlinks"
 
-vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
+list:
+	@$(foreach val, $(DOTFILES), /bin/ls -d $(val);)
 
-irb: $(foreach f, $(filter .irb%, $(DOT_FILES)), link-dot-file-$(f))
+update:
+	git pull origin master
 
-git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f))
+link:
+	@echo '--- Create Symlink from dotfiles to home directory. ---'
+	@echo ''
+	@$(foreach val, $(DOTFILES), /bin/ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-vrapper: $(foreach f, $(filter .vrapper%, $(DOT_FILES)), link-dot-file-$(f))
+install: update link
+	@exec $$SHELL
 
-gem: $(foreach f, $(filter .gem%, $(DOT_FILES)), link-dot-file-$(f))
-
-.PHONY:clean
-clean: $(foreach, $(DOT_FILES), unlink-dot-file(f))
-
-link-dot-file-%: %
-	@echo "Create Symlink $< => $(HOME)/$<"
-	@ln -snf $(CURDIR)/$< $(HOME)/$<
-
-unlink-dot-file-%: %
-	@echo "Remove Symlink $(HOME)/$<"
-	@$(RM) $(HOME)/$<
+clean:
+	@echo '--- Remove dot files in your home directory. ---'
+	@$(foreach val, $(DOTFILES), /bin/unlink $(HOME)/$(val);)
