@@ -1,87 +1,4 @@
-"----------------------------------------------------
-"" neobundle.vim
-"----------------------------------------------------
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'taglist.vim'
-
-" コード補完
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-
-" tree
-NeoBundle 'The-NERD-tree'
-NeoBundle 'The-NERD-Commenter'
-
-" vimからGit操作する
-NeoBundle 'tpope/vim-fugitive'
-
-" statusline
-NeoBundle 'itchyny/lightline.vim'
-
-" インデントに色付け
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tomtom/tcomment_vim'
-
-"Color Scheme
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'djjcast/mirodark'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/phd'
-NeoBundle 'ciaranm/inkpot'
-NeoBundle 'zeis/vim-kolor'
-
-"HTML, CSS, JavaScript
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'AtsushiM/sass-compile.vim'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'jelera/vim-javascript-syntax'
-
-"Ruby, Ruby on Rails
-NeoBundle 'rails.vim'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-endwise' " Ruby向けにendを挿入する
-
-"DB
-NeoBundle 'dbext.vim'
-
-" Haskell
-NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'ujihisa/neco-ghc'
-
-" Markdown
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-
-" Swift
-NeoBundle 'toyamarinyon/vim-swift'
-
-" Golang
-NeoBundle 'fatih/vim-go'
-NeoBundle 'jnwhiteh/vim-golang'
-" TeX
-NeoBundle 'lervag/vimtex'
-
-" Others
-NeoBundle 'elzr/vim-json'
-NeoBundle 'cespare/vim-toml'
-
-call neobundle#end()
-
-"Required
-filetype plugin indent on
-
-NeoBundleCheck
+source ~/.vim/plugins.vim
 
 " ---------
 " Basic
@@ -280,6 +197,7 @@ set hlsearch
 " ----------------
 " plugin's setting
 " ----------------
+let g:go_fmt_command = "goimpoorts"
 " neocomplete
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -352,6 +270,10 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+" neosnippet.vim
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
 "------------------------------------
 "" Emmet.vim
 "------------------------------------
@@ -383,3 +305,7 @@ endif
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a Google\ Chrome'
 let g:vim_markdown_folding_disabled=1
+
+
+" jsx, js highlight
+let g:jsx_ext_required = 0
