@@ -61,3 +61,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 source ~/.zsh/titech.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
+
+if (which zprof > /dev/null) ;then
+  zprof | less
+fi
