@@ -1,3 +1,4 @@
+" Plugins
 source ~/.vim/plugins.vim
 
 " ---------
