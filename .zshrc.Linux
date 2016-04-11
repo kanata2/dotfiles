@@ -1,0 +1,6 @@
+# Xmodmap
+xmodmap $HOME/.Xmodmap 2>/dev/null
+
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
