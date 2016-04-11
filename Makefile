@@ -19,13 +19,12 @@ update:
 	git pull origin master
 
 link:
-	@echo '--- Create Symlink from dotfiles to home directory. ---'
-	@echo ''
+	@echo "--- Create Symlink from dotfiles to home directory. ---"
 	@$(foreach val, $(DOTFILES), /bin/ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 install: update link
 	@exec $$SHELL
 
 clean:
-	@echo '--- Remove dot files in your home directory. ---'
+	@echo "--- Remove dot files in your home directory. ---"
 	@$(foreach val, $(DOTFILES), /bin/unlink $(HOME)/$(val);)
