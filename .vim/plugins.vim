@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'unite.vim'
 
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
