@@ -40,6 +40,7 @@ Plug 'ruby.vim'
 Plug 'rails.vim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
+Plug 'basyura/unite-rails'
 
 "DB
 Plug 'dbext.vim'
