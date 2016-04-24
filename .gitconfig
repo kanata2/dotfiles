@@ -8,3 +8,6 @@
 	one = log --oneline -n 10
 [push]
 	default = current
+[include]
+[github]
+	user = naoki-k
