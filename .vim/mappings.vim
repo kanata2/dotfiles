@@ -1,3 +1,6 @@
+" replacement ;, : (normal mode)
+nnoremap ; :
+nnoremap : ;
 
 " brackets
 inoremap { {}<LEFT>
