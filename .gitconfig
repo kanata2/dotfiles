@@ -2,12 +2,20 @@
 	name = naoki-k
 	email = k12naoki@gmail.com
 [core]
-	excludesfile = /Users/kanataninaoki/.gitignore_global
+	excludesfile = $HOME/.gitignore
+	editor = vim
 [alias]
 	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
 	one = log --oneline -n 10
 [push]
 	default = current
-[include]
+[alias]
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	st = status
+	ci = commit
+	co = checkout
+	d  = diff
+	b  = branch
 [github]
 	user = naoki-k
+[include]
