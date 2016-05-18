@@ -36,6 +36,7 @@ function peco-find-file() {
 	zle redisplay
 }
 zle -N peco-find-file
+stty -ixon
 bindkey '^q' peco-find-file
 
 # general
