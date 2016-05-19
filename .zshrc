@@ -27,7 +27,7 @@ function peco-find-file() {
 	if git rev-parse 2> /dev/null; then
 		source_files=$(git ls-files)
 	else
-		source_files=$(find . -type f)
+		source_files=$(find . -maxdepth 3 -type f)
 	fi
 	selected_files=$(echo $source_files | peco --prompt "[find file]")
 
