@@ -8,10 +8,18 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # colorize prompt
 autoload -U colors
 colors
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
 #tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
-tmp_prompt="%{${fg[cyan]}%}%(?!(╹◡╹) <!_(:3」∠ %)_ <) %{${reset_color}%}"
-tmp_prompt2="%{${fg[cyan]}%}%_< %{${reset_color}%}"
-tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}%(?!(╹◡╹) >!_(:3」∠ %)_ >) %{${reset_color}%}"
+tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+tmp_rprompt="%{${fg[green]}%}[%~]%1(v|%F{white}%1v%f|)%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # root user
