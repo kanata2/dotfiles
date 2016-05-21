@@ -1,6 +1,15 @@
 # Xmodmap
 xmodmap $HOME/.Xmodmap 2>/dev/null
 
+# Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
+# Python
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/work/go
+export PATH=$PATH:$GOPATH/bin
