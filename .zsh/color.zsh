@@ -9,19 +9,19 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -U colors
 colors
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{blue}%c%u(%b)%f"
+zstyle ':vcs_info:*' actionformats '(%b|%F{red}%a%f)'
+precmd () { vcs_info }
 #tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt="%{${fg[cyan]}%}%(?!(╹◡╹) >!_(:3」∠ %)_ >) %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%{${fg[green]}%}[%~]%1(v|%F{white}%1v%f|)%{${reset_color}%}"
+tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
-
+tmp_rprompt=$tmp_rprompt'${vcs_info_msg_0_}'
 # root user
 if [ ${UID} -eq 0 ]; then
   tmp_prompt="%B%U${tmp_prompt}%u%b"
