@@ -1,6 +1,8 @@
+tags
 .DS_Store
 .vim/.netrwhist
 .vim/plugged/*
 .vim/ftplugin/*
 .gitconfig.local
+.git_tmp
 .zshrc.local
