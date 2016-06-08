@@ -28,7 +28,6 @@ Plug 'zeis/vim-kolor'
 " HTML, CSS, JavaScript
 Plug 'mattn/emmet-vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'AtsushiM/sass-compile.vim'
 Plug 'tpope/vim-haml'
 Plug 'kchmck/vim-coffee-script'
 Plug 'jelera/vim-javascript-syntax'
