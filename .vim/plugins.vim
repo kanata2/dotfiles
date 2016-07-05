@@ -61,6 +61,9 @@ Plug 'fatih/vim-go'
 Plug 'jnwhiteh/vim-golang'
 Plug 'vim-jp/vim-go-extra'
 
+" Scala
+Plug 'derekwyatt/vim-scala'
+
 " TeX
 Plug 'lervag/vimtex'
 
