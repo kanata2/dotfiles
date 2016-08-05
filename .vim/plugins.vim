@@ -64,6 +64,8 @@ Plug 'vim-jp/vim-go-extra'
 " Scala
 Plug 'derekwyatt/vim-scala'
 
+" Julia
+Plug 'JuliaLang/julia-vim'
 " TeX
 Plug 'lervag/vimtex'
 
