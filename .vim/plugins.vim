@@ -71,6 +71,7 @@ Plug 'JuliaLang/julia-vim'
 Plug 'lervag/vimtex'
 
 " Others
+Plug 'rust-lang/rust.vim'
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
 
