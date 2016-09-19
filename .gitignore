@@ -6,3 +6,6 @@ tags
 .gitconfig.local
 .git_tmp
 .zshrc.local
+.bundle
+vendor/
+
