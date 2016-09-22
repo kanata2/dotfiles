@@ -74,5 +74,6 @@ Plug 'lervag/vimtex'
 Plug 'rust-lang/rust.vim'
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
+Plug 'nginx.vim'
 
 call plug#end()
