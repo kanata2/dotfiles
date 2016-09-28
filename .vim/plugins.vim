@@ -72,6 +72,7 @@ Plug 'lervag/vimtex'
 
 " Others
 Plug 'rust-lang/rust.vim'
+Plug 'rgrinberg/vim-ocaml'
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
 Plug 'nginx.vim'
