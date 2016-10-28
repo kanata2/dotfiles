@@ -1,10 +1,3 @@
-# emacs
-PATH=/usr/local/Cellar/emacs/24.3/bin:$PATH
-# Play! 1.2.7
-export PLAY_HOME=/usr/local/play-1.2.7
-export PATH=$PLAY_HOME:/opt/local/bin/:/opt/local/sbin:$PATH
-# OS
-export PATH=$PATH:/opt/os/bin
 # ruby
 export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
@@ -15,14 +8,10 @@ eval "$(pyenv virtualenv-init -)"
 # node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # go
-export GOPATH=$HOME/Work/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/dev/go:$HOME/dev
+export PATH=$PATH:$HOME/dev/bin:$HOME/dev/go/bin
 # TeX
 export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
-# elasticsearch
-export PATH=/usr/local/Cellar/elasticsearch/2.2.0_1/libexec/bin:$PATH
-# Heroku Tookbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 # postgres
 export PGDATA=/usr/local/var/postgres
 

@@ -2,7 +2,7 @@
 	name = naoki-k
 	email = k12naoki@gmail.com
 [core]
-	excludesfile = $HOME/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
@@ -15,6 +15,9 @@
 	one   = log --oneline -n 10
 [push]
 	default = current
+[ghq]
+	root = ~/dev/src
+	root = ~/dev/go/src
 [github]
 	user = naoki-k
 [include]
