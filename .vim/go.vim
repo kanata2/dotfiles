@@ -1,3 +1,3 @@
 " colorize `err`
-autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :highlight goErr ctermfg=11
 autocmd FileType go :match goErr /\<err\>/
