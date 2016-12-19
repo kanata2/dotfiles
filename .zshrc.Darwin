@@ -7,6 +7,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+# yarn
+export PATH="$(yarn global bin):$PATH"
 # go
 export GOPATH=$HOME/dev/go:$HOME/dev
 export PATH=$PATH:$HOME/dev/bin:$HOME/dev/go/bin
