@@ -1,23 +1,24 @@
 [user]
-	name = naoki-k
-	email = k12naoki@gmail.com
+  name = Naoki Kanatani
+  email = k12naoki@gmail.com
+[color]
+  ui = true
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+  editor = vim
+  excludesfile = ~/.gitignore
 [alias]
-	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-	st    = status
-	ci    = commit
-	co    = checkout
-	d     = diff
-	b     = branch
-	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
-	one   = log --oneline -n 10
+  st    = status
+  ci    = commit
+  co    = checkout
+  d     = diff
+  b     = branch
+  graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+  one   = log --oneline -n 10
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [push]
-	default = current
+  default = current
 [ghq]
-	root = ~/dev/src
-	root = ~/dev/go/src
+  root = ~/dev/src
+  root = ~/dev/go/src
 [github]
-	user = naoki-k
-[include]
+  user = naoki-k
