@@ -76,5 +76,6 @@ Plug 'rgrinberg/vim-ocaml'
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
 Plug 'nginx.vim'
+Plug 'keith/tmux.vim'
 
 call plug#end()
