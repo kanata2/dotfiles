@@ -16,6 +16,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomtom/tcomment_vim'
 
+Plug 'w0rp/ale'
+
 " Colorscheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'djjcast/mirodark'
