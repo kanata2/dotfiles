@@ -31,7 +31,6 @@ if has("autocmd")
   filetype plugin on
   filetype indent on
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
-  autocmd BufRead,BufNewFile *.vue set filetype=html
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
   autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
