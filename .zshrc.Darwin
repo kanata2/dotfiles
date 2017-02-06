@@ -1,3 +1,5 @@
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
 # ruby
 export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
