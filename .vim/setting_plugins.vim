@@ -149,5 +149,10 @@ let g:go_fmt_command = "goimpoorts"
 " gofmt when source files are saved
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" vim-latex
+" FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
+imap <C-g> <Plug>IMAP_JumpForward
+nmap <C-g> <Plug>IMAP_JumpForward
+
 " vim-markdown
 let g:vim_markdown_math = 1
