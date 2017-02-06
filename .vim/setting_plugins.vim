@@ -151,31 +151,3 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " vim-markdown
 let g:vim_markdown_math = 1
-
-"------------------------------------
-"" vim-indent-guides
-"------------------------------------
-nnoremap <silent> <Space>id :<C-u>IndentGuidesToggle<Enter>
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 4
-let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-if 'dark' == &background
-  hi IndentGuidesOdd  ctermbg=black
-  hi IndentGuidesEven ctermbg=darkgrey
-else
-  hi IndentGuidesOdd  ctermbg=white
-  hi IndentGuidesEven ctermbg=lightgrey
-endif
-
-"------------------------------------
-"" markdown
-"------------------------------------
-au BufRead,BufNewFile *.md set filetype=markdown
-let g:previm_open_cmd = 'open -a Google\ Chrome'
-let g:vim_markdown_folding_disabled=1
-
-
-" jsx, js highlight
-let g:jsx_ext_required = 0
