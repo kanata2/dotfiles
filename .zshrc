@@ -39,6 +39,10 @@ zle -N peco-find-file
 stty -ixon
 bindkey '^q' peco-find-file
 
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
 # general
 source $HOME/.zsh/basic.zsh
 
@@ -54,10 +58,9 @@ source $HOME/.zsh/color.zsh
 # local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # profile
 if (which zprof > /dev/null) ;then
   zprof | less
 fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
