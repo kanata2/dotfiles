@@ -7,15 +7,15 @@ let g:lightline = {
       \   ],
       \ },
       \ 'component_function': {
-      \   'ale': 'LightLineALE',
-      \   'filename': 'LightLineFilename',
-      \   'fugitive': 'LightLineFugitive',
+      \   'ale': 'LightlineALE',
+      \   'filename': 'LightlineFilename',
+      \   'fugitive': 'LightlineFugitive',
       \   'modified': 'LightlineModified',
-      \   'readonly': 'LightLineReadonly'
+      \   'readonly': 'LightlineReadonly'
       \ }
       \ }
 
-function! LightLineALE()
+function! LightlineALE()
   if exists('g:loaded_ale')
     return ALEGetStatusLine()
   else
@@ -24,12 +24,10 @@ function! LightLineALE()
 endfunction
 
 function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+  return ('' != expand('%:t') ? expand('%:t') : '[No Name]')
 endfunction
 
-function! LightLineFugitive()
+function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
     return branch !=# '' ? '⭠ '.branch : ''
