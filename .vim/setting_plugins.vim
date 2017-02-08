@@ -24,7 +24,11 @@ function! LightlineALE()
 endfunction
 
 function! LightlineFilename()
-  return ('' != expand('%:t') ? expand('%:t') : '[No Name]')
+  let filename = expand('%:t')
+  if strlen(filename) > 20
+    return filename[0:10].'...'.filename[-11:-1]
+  endif
+  return ('' != filename ? filename : '[No Name]')
 endfunction
 
 function! LightlineFugitive()
