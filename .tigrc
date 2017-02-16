@@ -1,0 +1,1 @@
+bind generic , @sh -c 'hub browse -- commit/%(commit)'
