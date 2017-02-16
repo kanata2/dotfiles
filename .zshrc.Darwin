@@ -14,7 +14,7 @@ eval "$(pyenv virtualenv-init --no-rehash -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # yarn
-export PATH="$(yarn global bin):$PATH"
+export PATH="$(yarnpkg global bin):$PATH"
 
 # go
 export GOPATH=$HOME/dev/go:$HOME/dev
