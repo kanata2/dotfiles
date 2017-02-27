@@ -47,6 +47,7 @@ Plug 'slim-template/vim-slim'
 " JavaScript
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
