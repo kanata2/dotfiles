@@ -33,5 +33,3 @@ set wildchar=<tab>
 set wildmode=list:full
 set history=1000
 set complete+=k
-
-
