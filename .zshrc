@@ -39,6 +39,12 @@ zle -N peco-find-file
 stty -ixon
 bindkey '^q' peco-find-file
 
+function ped() {
+    ack "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs -o vim'
+}
+zle -N ped
+bindkey '^\' ped
+
 # local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
