@@ -20,7 +20,7 @@ export GOPATH=$HOME/dev/go:$HOME/dev
 export PATH=$PATH:$HOME/dev/bin:$HOME/dev/go/bin
 
 # TeX
-export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
+export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
 
 # postgres
 export PGDATA=/usr/local/var/postgres
