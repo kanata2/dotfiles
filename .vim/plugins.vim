@@ -40,6 +40,9 @@ Plug 'JuliaLang/julia-vim'
 " JSON
 Plug 'elzr/vim-json'
 
+" Haskell
+Plug 'itchyny/vim-haskell-indent'
+
 " HTML
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
