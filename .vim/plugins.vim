@@ -63,6 +63,8 @@ Plug 'tpope/vim-endwise'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" Scala
+Plug 'derekwyatt/vim-scala'
 " TeX
 Plug 'vim-latex/vim-latex'
 
