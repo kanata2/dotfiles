@@ -76,4 +76,7 @@ Plug 'keith/tmux.vim'
 
 " TOML
 Plug 'cespare/vim-toml'
+
+" Others
+Plug 'thinca/vim-quickrun'
 call plug#end()

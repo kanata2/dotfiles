@@ -158,3 +158,7 @@ nmap <C-g> <Plug>IMAP_JumpForward
 
 " vim-markdown
 let g:vim_markdown_math = 1
+
+" vim-quickrun
+let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
+nnoremap <silent> <C-q> :QuickRun<CR>
