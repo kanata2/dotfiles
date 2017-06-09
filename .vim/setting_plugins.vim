@@ -161,4 +161,10 @@ let g:vim_markdown_math = 1
 
 " vim-quickrun
 let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
+let g:quickrun_config.haskell = {
+      \ 'type': 'haskell/stack',
+      \ 'command': 'stack',
+      \ 'exec': '%c %o %s %a',
+      \ 'cmdopt': 'runghc',
+      \ }
 nnoremap <silent> <C-q> :QuickRun<CR>
