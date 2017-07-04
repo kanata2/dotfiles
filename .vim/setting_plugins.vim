@@ -130,6 +130,9 @@ let g:user_emmet_settings = {
 " ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
+let g:ale_linters = {
+      \ 'go': ['gometalinter']
+      \ }
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
