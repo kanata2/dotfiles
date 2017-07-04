@@ -133,6 +133,7 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
       \ 'go': ['gometalinter']
       \ }
+let g:ale_go_gometalinter_options = '--vendored-linters --disable-all --enable=gotype --enable=vet --enable=golint -t'
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
