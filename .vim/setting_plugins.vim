@@ -133,7 +133,7 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
       \ 'go': ['gometalinter']
       \ }
-let g:ale_go_gometalinter_options = '--vendored-linters --disable-all --enable=gotype --enable=vet --enable=golint -t'
+let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -147,6 +147,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_gocode_unimported_packages = 1
 
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
