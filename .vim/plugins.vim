@@ -65,6 +65,7 @@ Plug 'tpope/vim-endwise'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " Scala
 Plug 'derekwyatt/vim-scala'

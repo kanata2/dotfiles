@@ -173,3 +173,7 @@ let g:quickrun_config.haskell = {
       \ 'cmdopt': 'runghc',
       \ }
 nnoremap <silent> <C-q> :QuickRun<CR>
+
+" vim-racer
+set hidden
+let g:racer_experimental_completer = 1
