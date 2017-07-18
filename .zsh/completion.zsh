@@ -1,3 +1,4 @@
+fpath+=$HOME/.zfunc
 autoload -U compinit
 compinit
 
