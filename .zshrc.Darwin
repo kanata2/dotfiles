@@ -21,6 +21,7 @@ export PATH=$PATH:$HOME/dev/bin:$HOME/dev/go/bin
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
+export RUST_SRC_PATH=$HOME/dev/src/github.com/rust-lang/rust/src
 
 # TeX
 export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
