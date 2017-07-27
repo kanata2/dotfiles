@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " plugins
 source $HOME/.vim/plugins.vim
 
@@ -25,11 +28,9 @@ source $HOME/.vim/setting_plugins.vim
 " golang
 source $HOME/.vim/go.vim
 
-" FIXME: errors occur `command too recursive` when you move following lines to indent.vim
-" change for each filetype
-if has("autocmd")
-  filetype plugin on
-  filetype indent on
+augroup vimrc
+  filetype plugin indent on
+  autocmd!
   autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
   autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
@@ -53,5 +54,5 @@ if has("autocmd")
   autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
   autocmd FileType go         setlocal sw=4 sts=4 ts=4 et noexpandtab
-endif
+augroup END
 

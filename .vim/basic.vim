@@ -1,26 +1,20 @@
-set ffs=unix,dos,mac
-set encoding=utf-8
-
-" keymap leader
-let mapleader = ","
-
-set textwidth=0
-set nobackup
 set autoread
-set noswapfile
-set hidden
-set vb t_vb=
 set backspace=indent,eol,start
-set whichwrap=b,s,h,l,<,>,[,]
-set showcmd
-set showmode
-set viminfo=
 
 " clipboard
 set clipboard+=unnamed
 
-" paste the content of clipboard by Ctrl-v (insert mode)
-imap <C-v> <ESC>"*pa
+set ffs=unix,dos,mac
+set hidden
+set nobackup
+set noerrorbells
+set noswapfile
+set showcmd
+set showmode
+set textwidth=0
+set viminfo=
+set visualbell t_vb=
+set whichwrap=b,s,h,l,<,>,[,]
 
 " mouse
 set mouse=a

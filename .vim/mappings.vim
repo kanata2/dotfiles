@@ -1,3 +1,9 @@
+" keymap leader
+let g:mapleader = ","
+
+" paste the content of clipboard by Ctrl-v (insert mode)
+imap <C-v> <ESC>"*pa
+
 " replacement ;, : (normal mode)
 nnoremap ; :
 nnoremap : ;
@@ -30,3 +36,6 @@ nnoremap vy vawy
 " ESC
 inoremap jj <ESC>
 
+" cli history like
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
