@@ -22,3 +22,5 @@
   root = ~/dev/go/src
 [github]
   user = naoki-k
+[http]
+	cookiefile = ~/.gitcookies
