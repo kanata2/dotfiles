@@ -46,6 +46,7 @@ Plug 'itchyny/vim-haskell-indent'
 " HTML
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
+Plug 'digitaltoad/vim-pug'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
