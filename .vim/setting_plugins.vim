@@ -1,4 +1,4 @@
-" lightline.vim
+" lightline.vim {{{
 let g:lightline = {
       \ 'active': {
       \   'left': [
@@ -57,7 +57,9 @@ function! LightlineReadonly()
   endif
 endfunction
 
-" neocomplete
+" }}}
+
+" neocomplete {{{
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -116,26 +118,31 @@ endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+" }}}
 
-" neosnippet.vim
+
+" neosnippet.vim {{{
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" }}}
 
-" emmet.vim
+" emmet.vim {{{
 " en -> ja
 let g:user_emmet_settings = {
       \  'lang' : 'ja'
       \ }
+" }}}
 
-" ale
+" ale {{{
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
       \ 'go': ['gometalinter']
       \ }
 let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
+" }}}
 
-" vim-go
+" vim-go {{{
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -151,6 +158,7 @@ let g:go_gocode_unimported_packages = 1
 
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
+" }}}
 
 " vim-go-extra
 " gofmt when source files are saved
@@ -174,6 +182,17 @@ let g:quickrun_config.haskell = {
       \ }
 nnoremap <silent> <C-q> :QuickRun<CR>
 
+" rust.vim
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
 " vim-racer
-set hidden
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>d <Plug>(rust-doc)
+
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
+
+" vim:set foldmethod=marker:
