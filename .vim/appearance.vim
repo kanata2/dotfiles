@@ -1,5 +1,5 @@
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 set cmdheight=2
 " display the unprintable characters in hex
 set display=uhex
