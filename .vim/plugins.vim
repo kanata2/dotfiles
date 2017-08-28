@@ -70,6 +70,10 @@ Plug 'racer-rust/vim-racer'
 
 " Scala
 Plug 'derekwyatt/vim-scala'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " TeX
 Plug 'vim-latex/vim-latex'
 
