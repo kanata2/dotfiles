@@ -85,4 +85,5 @@ Plug 'cespare/vim-toml'
 
 " Others
 Plug 'thinca/vim-quickrun'
+Plug 'kien/ctrlp.vim'
 call plug#end()
