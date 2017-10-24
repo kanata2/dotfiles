@@ -10,7 +10,6 @@ function peco-history-selection() {
     zle redisplay
 }
 zle -N peco-history-selection
-bindkey '^R' peco-history-selection
 
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -21,7 +20,6 @@ function peco-src () {
   zle clear-screen
 }
 zle -N peco-src
-bindkey '^]' peco-src
 
 function peco-find-file() {
 	if git rev-parse 2> /dev/null; then
@@ -37,35 +35,29 @@ function peco-find-file() {
 }
 zle -N peco-find-file
 stty -ixon
-bindkey '^q' peco-find-file
 
 function ped() {
     ack "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs -o vim'
 }
 zle -N ped
-bindkey '^\' ped
 
 # local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# zplug
 source $HOME/.zsh/zplug.zsh
-
-# general
 source $HOME/.zsh/basic.zsh
-
-# complement
 source $HOME/.zsh/completion.zsh
-
-# history
 source $HOME/.zsh/history.zsh
-
-# color
 source $HOME/.zsh/color.zsh
 
+bindkey '^R' peco-history-selection
+bindkey '^]' peco-src
+bindkey '^\' ped
+bindkey '^q' peco-find-file
+
 # profile
-if (which zprof > /dev/null) ;then
-  zprof | less
-fi
+# if (which zprof > /dev/null) ;then
+#   zprof | less
+# fi
