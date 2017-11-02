@@ -22,5 +22,5 @@
   root = ~/dev/go/src
 [github]
   user = kanata2
-[http]
-	cookiefile = ~/.gitcookies
+[include]
+  path = .gitconfig.local
