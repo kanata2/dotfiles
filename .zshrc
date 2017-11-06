@@ -46,7 +46,7 @@ zle -N ped
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $HOME/.zsh/zplug.zsh
+# source $HOME/.zsh/zplug.zsh
 source $HOME/.zsh/basic.zsh
 source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/history.zsh
