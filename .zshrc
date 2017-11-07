@@ -42,11 +42,9 @@ function ped() {
 zle -N ped
 
 # local settings
-if [[ -z $TMUX ]]; then
-    [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-    [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source $HOME/.zsh/zplug.zsh
 source $HOME/.zsh/basic.zsh
