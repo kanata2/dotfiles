@@ -205,4 +205,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+" vaffle.vim
+let g:vaffle_show_hidden_files = 1
+
 " vim:set foldmethod=marker:
