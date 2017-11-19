@@ -164,15 +164,16 @@ let g:go_fmt_command = "goimports"
 " gofmt when source files are saved
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
-" vim-latex
+" vim-latex {{{
 " FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
 imap <C-g> <Plug>IMAP_JumpForward
 nmap <C-g> <Plug>IMAP_JumpForward
+" }}}
 
 " vim-markdown
 let g:vim_markdown_math = 1
 
-" vim-quickrun
+" vim-quickrun {{{
 let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
 let g:quickrun_config.haskell = {
       \ 'type': 'haskell/stack',
@@ -181,12 +182,13 @@ let g:quickrun_config.haskell = {
       \ 'cmdopt': 'runghc',
       \ }
 nnoremap <silent> <C-q> :QuickRun<CR>
+" }}}
 
 " rust.vim
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
-" vim-racer
+" vim-racer {{{
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
@@ -194,6 +196,7 @@ au FileType rust nmap <leader>d <Plug>(rust-doc)
 
 let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
+" }}}
 
 " ctrlp.vim
 let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
