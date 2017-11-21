@@ -33,7 +33,6 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Golang
 Plug 'fatih/vim-go'
-Plug 'vim-jp/vim-go-extra'
 
 " Julia
 Plug 'JuliaLang/julia-vim'

@@ -148,21 +148,17 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
+let g:go_gocode_unimported_packages = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_gocode_unimported_packages = 1
+let g:go_highlight_types = 1
 
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
 " }}}
-
-" vim-go-extra
-" gofmt when source files are saved
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " vim-latex {{{
 " FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
