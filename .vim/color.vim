@@ -1,6 +1,3 @@
-set background=dark
-colorscheme hybrid
-
 " setting for each type of terminal
 if &term =~ "xterm-256color" || "screen-256color"
   set t_Co=256
@@ -16,4 +13,7 @@ elseif &term =~ "xterm-color"
   set t_Sb=[4%dm
 endif
 
+set background=dark
+autocmd ColorScheme * highlight LineNr ctermfg=143
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+colorscheme hybrid
