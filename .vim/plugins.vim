@@ -23,8 +23,8 @@ Plug 'mattn/webapi-vim'
 Plug 'w0rp/ale'
 
 " Moving
-Plug 'unite.vim'
-Plug 'basyura/unite-rails'
+" Plug 'unite.vim'
+" Plug 'basyura/unite-rails'
 Plug 'cocopon/vaffle.vim'
 
 " Syntax
