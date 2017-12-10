@@ -57,7 +57,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 
 " Nginx
-Plug 'nginx.vim'
+Plug 'chr4/nginx.vim'
 
 " Ruby, Ruby on Rails
 Plug 'vim-ruby/vim-ruby'
