@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 
 " Colorscheme
-Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 
 " Completion
@@ -23,8 +22,6 @@ Plug 'mattn/webapi-vim'
 Plug 'w0rp/ale'
 
 " Moving
-" Plug 'unite.vim'
-" Plug 'basyura/unite-rails'
 Plug 'cocopon/vaffle.vim'
 
 " Syntax
@@ -33,9 +30,6 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Golang
 Plug 'fatih/vim-go'
-
-" Julia
-Plug 'JuliaLang/julia-vim'
 
 " JSON
 Plug 'elzr/vim-json'
