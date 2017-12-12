@@ -1,5 +1,5 @@
 fpath+=$HOME/.zfunc
-autoload -Uz compinit && compinit -u
+# autoload -Uz compinit && compinit -u
 
 # display of the completion
 setopt auto_list
