@@ -12,5 +12,5 @@ eval "$(pyenv virtualenv-init --no-rehash -)"
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/dev/go:$HOME/dev
-export PATH=$PATH:$HOME/dev/bin:$HOME/dev/go/bin
+export GOPATH=$HOME/dev
+export PATH=$PATH:$HOME/dev/bin
