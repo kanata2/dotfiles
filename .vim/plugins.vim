@@ -29,7 +29,7 @@ Plug 'cocopon/vaffle.vim'
 Plug 'hail2u/vim-css3-syntax'
 
 " Golang
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 " JSON
 Plug 'elzr/vim-json'
