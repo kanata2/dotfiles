@@ -136,10 +136,7 @@ let g:user_emmet_settings = {
 " ale {{{
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
-let g:ale_linters = {
-      \ 'go': ['gometalinter']
-      \ }
-let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
+let g:ale_set_highlights = 0
 " }}}
 
 " vim-go {{{
