@@ -6,9 +6,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'w0ng/vim-hybrid'
 
 " Completion
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'mhartington/nvim-typescript'
+Plug 'sebastianmarkow/deoplete-rust'
+
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattn/emmet-vim'
