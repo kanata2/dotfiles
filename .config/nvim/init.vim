@@ -168,68 +168,69 @@ inoremap jj <ESC>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 " }}}
-"" plugin's setting {{{1
-"" lightline.vim {{{2
-"let g:lightline = {
-"      \ 'active': {
-"      \   'left': [
-"      \     ['mode', 'paste'],
-"      \     ['readonly', 'fugitive', 'filename', 'ale', 'modified']
-"      \   ],
-"      \ },
-"      \ 'component_function': {
-"      \   'ale': 'LightlineALE',
-"      \   'filename': 'LightlineFilename',
-"      \   'fugitive': 'LightlineFugitive',
-"      \   'modified': 'LightlineModified',
-"      \   'readonly': 'LightlineReadonly'
-"      \ }
-"      \ }
-"
-"function! LightlineALE()
-"  if exists('g:loaded_ale')
-"    return ALEGetStatusLine()
-"  else
-"    return ''
-"  endif
-"endfunction
-"
-"function! LightlineFilename()
-"  let filename = expand('%:t')
-"  if strlen(filename) > 20
-"    return filename[0:10].'...'.filename[-11:-1]
-"  endif
-"  return ('' != filename ? filename : '[No Name]')
-"endfunction
-"
-"function! LightlineFugitive()
-"  if exists('*fugitive#head')
-"    let branch = fugitive#head()
-"    return branch !=# '' ? '⭠ '.branch : ''
-"  endif
-"  return ''
-"endfunction
-"
-"function! LightlineModified()
-"  if &modified
-"    return '+'
-"  elseif &modifiable
-"    return ''
-"  else
-"    return ''
-"  endif
-"endfunction
-"
-"function! LightlineReadonly()
-"  if &readonly
-"    return '⭤'
-"  else
-"    return ''
-"  endif
-"endfunction
-"
-"" }}}2
-"
+
+" plugin's setting {{{1
+" lightline.vim {{{2
+let g:lightline = {
+      \ 'active': {
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['readonly', 'fugitive', 'filename', 'ale', 'modified']
+      \   ],
+      \ },
+      \ 'component_function': {
+      \   'ale': 'LightlineALE',
+      \   'filename': 'LightlineFilename',
+      \   'fugitive': 'LightlineFugitive',
+      \   'modified': 'LightlineModified',
+      \   'readonly': 'LightlineReadonly'
+      \ }
+      \ }
+
+function! LightlineALE()
+  if exists('g:loaded_ale')
+    return ALEGetStatusLine()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFilename()
+  let filename = expand('%:t')
+  if strlen(filename) > 20
+    return filename[0:10].'...'.filename[-11:-1]
+  endif
+  return ('' != filename ? filename : '[No Name]')
+endfunction
+
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? '⭠ '.branch : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineModified()
+  if &modified
+    return '+'
+  elseif &modifiable
+    return ''
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &readonly
+    return '⭤'
+  else
+    return ''
+  endif
+endfunction
+
+" }}}2
+
 "" deoplete {{{2
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 100
@@ -258,94 +259,87 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 " }}} 3
 " }}} 2
 
-"
-"
-"" neosnippet.vim {{{2
-"let g:neosnippet#enable_snipmate_compatibility = 1
-"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-"" }}}
-"
-"" emmet.vim {{{2
-"" en -> ja
-"let g:user_emmet_settings = {
-"      \  'lang' : 'ja'
-"      \ }
-"" }}}
-"
-"" ale {{{2
-"let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-"let g:ale_sign_column_always = 1
-"let g:ale_linters = {
-"      \ 'go': ['gometalinter']
-"      \ }
-"let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
-"" }}}2
-"
-"" vim-go {{{2
-"au FileType go nmap <leader>r <Plug>(go-run)
-"au FileType go nmap <leader>b <Plug>(go-build)
-"au FileType go nmap <leader>t <Plug>(go-test)
-"au FileType go nmap <leader>c <Plug>(go-coverage)
-"
-"let g:go_gocode_unimported_packages = 1
-"let g:go_highlight_build_constraints = 1
-"let g:go_highlight_fields = 1
-"let g:go_highlight_functions = 1
-"let g:go_highlight_methods = 1
-"let g:go_highlight_operators = 1
-"let g:go_highlight_types = 1
-"
-"" Enable goimports to automatically insert import paths instead of gofmt
-"let g:go_fmt_command = "goimports"
-"" }}}2
-"
-"" vim-latex {{{2
-"" FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
-"imap <C-g> <Plug>IMAP_JumpForward
-"nmap <C-g> <Plug>IMAP_JumpForward
-"" }}}2
-"
-"" vim-markdown
-"let g:vim_markdown_math = 1
-"
-"" vim-quickrun {{{2
-"let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
-"let g:quickrun_config.haskell = {
-"      \ 'type': 'haskell/stack',
-"      \ 'command': 'stack',
-"      \ 'exec': '%c %o %s %a',
-"      \ 'cmdopt': 'runghc',
-"      \ }
-"nnoremap <silent> <C-q> :QuickRun<CR>
-"" }}}2
-"
-"" rust.vim
-"let g:rustfmt_autosave = 1
-"let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-"
-"" vim-racer {{{2
-"au FileType rust nmap gd <Plug>(rust-def)
-"au FileType rust nmap gs <Plug>(rust-def-split)
-"au FileType rust nmap gx <Plug>(rust-def-vertical)
-"au FileType rust nmap <leader>d <Plug>(rust-doc)
-"
-"let g:racer_cmd = "$HOME/.cargo/bin/racer"
-"let g:racer_experimental_completer = 1
-"" }}}2
-"
-"" ctrlp.vim
-"let g:ctrlp_working_path_mode = 'ra'
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-"
-"let g:ctrlp_custom_ignore = '\v[\/](node_modules|vendor|dist)|(\.(git|hg|svn))$'
-"let g:ctrlp_custom_ignore = {
-"  \ 'dir':  '\v[\/](node_modules|vendor|dist)|(\.(git|hg|svn))$',
-"  \ 'file': '\v\.(exe|so|dll)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
-"" vaffle.vim
-"let g:vaffle_show_hidden_files = 1
-"" }}}1
+" emmet.vim {{{2
+" en -> ja
+let g:user_emmet_settings = {
+      \  'lang' : 'ja'
+      \ }
+" }}}
+
+" ale {{{2
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+      \ 'go': ['gometalinter']
+      \ }
+let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
+" }}}2
+
+" vim-go {{{2
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+let g:go_gocode_unimported_packages = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
+" }}}2
+
+" vim-latex {{{2
+" FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
+imap <C-g> <Plug>IMAP_JumpForward
+nmap <C-g> <Plug>IMAP_JumpForward
+" }}}2
+
+" vim-markdown
+let g:vim_markdown_math = 1
+
+" vim-quickrun {{{2
+let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
+let g:quickrun_config.haskell = {
+      \ 'type': 'haskell/stack',
+      \ 'command': 'stack',
+      \ 'exec': '%c %o %s %a',
+      \ 'cmdopt': 'runghc',
+      \ }
+nnoremap <silent> <C-q> :QuickRun<CR>
+" }}}2
+
+" rust.vim
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
+" vim-racer {{{2
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>d <Plug>(rust-doc)
+
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+" }}}2
+
+" ctrlp.vim
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|vendor|dist)|(\.(git|hg|svn))$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|vendor|dist)|(\.(git|hg|svn))$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+" vaffle.vim
+let g:vaffle_show_hidden_files = 1
+" }}}1
 
 " vim:set foldmethod=marker:
