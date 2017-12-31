@@ -1,7 +1,7 @@
 PATH       := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 FILES      := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .git .gitmodules
-DOTFILES   := $(filter-out $(EXCLUSIONS), $(FILES))
+EXCLUSIONS := .DS_Store .git .gitmodules .config
+DOTFILES   := $(filter-out $(EXCLUSIONS), $(FILES)) .config/nvim
 
 all: install
 
