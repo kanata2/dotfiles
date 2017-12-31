@@ -48,6 +48,7 @@ call plug#end()
 " basic {{{
 set encoding=utf-8
 scriptencoding utf-8
+filetype plugin indent on
 
 set cmdheight=2
 " display the unprintable characters in hex
@@ -346,35 +347,5 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 "" vaffle.vim
 "let g:vaffle_show_hidden_files = 1
 "" }}}1
-
-" indentation {{{
-augroup vimrc
-  filetype plugin indent on
-  autocmd!
-  autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType eruby      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType julia      setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType markdown   setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType scheme     setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType sql        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType xml        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType go         setlocal sw=4 sts=4 ts=4 et noexpandtab
-augroup END
-" }}}
 
 " vim:set foldmethod=marker:
