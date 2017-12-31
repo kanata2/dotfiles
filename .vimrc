@@ -1,5 +1,6 @@
 set encoding=utf-8
 scriptencoding utf-8
+filetype plugin indent on
 
 " plugins
 source $HOME/.vim/plugins.vim
