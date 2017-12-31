@@ -11,8 +11,6 @@ function! s:check_back_space() "{{{
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
-inoremap <expr><C-h>
-      \ deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>
       \ deoplete#smart_close_popup()."\<C-h>"
 
