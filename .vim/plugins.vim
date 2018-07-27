@@ -27,6 +27,10 @@ Plug 'mattn/webapi-vim'
 " Lint
 Plug 'w0rp/ale'
 
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+
 " Moving
 Plug 'cocopon/vaffle.vim'
 
