@@ -25,6 +25,7 @@ let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
 " }}} 1
 
 " lightline.vim {{{
+let g:airline#extensions#ale#enabled = 1
 let g:lightline = {
       \ 'active': {
       \   'left': [
@@ -43,7 +44,15 @@ let g:lightline = {
 
 function! LightlineALE()
   if exists('g:loaded_ale')
-    return ALEGetStatusLine()
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'ok' : printf(
+          \  '%d×  %d△ ',
+          \ all_non_errors,
+          \ all_errors
+          \)
   else
     return ''
   endif
