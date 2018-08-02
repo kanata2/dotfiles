@@ -173,4 +173,15 @@ let g:ctrlp_custom_ignore = {
 " vaffle.vim
 let g:vaffle_show_hidden_files = 1
 
+" vim-test
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
+nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
+nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
+nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
+nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+
 " vim:set foldmethod=marker:

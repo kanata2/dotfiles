@@ -31,6 +31,11 @@ Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 
+" Testing
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
+
+
 " Moving
 Plug 'cocopon/vaffle.vim'
 

@@ -3,6 +3,7 @@ tags
 .vim/.netrwhist
 .vim/plugged/*
 .vim/ftplugin/*
+.vim/view/*
 .gitconfig.local
 .git_tmp
 .zshrc.local
