@@ -6,15 +6,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'mhartington/nvim-typescript'
 Plug 'sebastianmarkow/deoplete-rust'
 Plug 'Shougo/deoplete-rct'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'w0ng/vim-hybrid'
@@ -46,7 +42,6 @@ call plug#end()
 " }}}
 
 " basic {{{
-set encoding=utf-8
 scriptencoding utf-8
 filetype plugin indent on
 
