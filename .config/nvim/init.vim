@@ -22,20 +22,15 @@ Plug 'derekwyatt/vim-scala'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'hashivim/vim-terraform'
-Plug 'itchyny/vim-haskell-indent'
 Plug 'keith/tmux.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chr4/nginx.vim'
-Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
-Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 call plug#end()
@@ -45,13 +40,14 @@ call plug#end()
 scriptencoding utf-8
 filetype plugin indent on
 
-set cmdheight=2
 " display the unprintable characters in hex
 set display=uhex
-set laststatus=2
-set list
+
 " display format of invisible characters
+set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+set cmdheight=2
 set number
 set ruler
 set scrolloff=10
@@ -61,7 +57,7 @@ set autoread
 set backspace=indent,eol,start
 
 " clipboard
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 set ffs=unix,dos,mac
 set hidden
@@ -203,13 +199,13 @@ function! LightlineFilename()
   if strlen(filename) > 20
     return filename[0:10].'...'.filename[-11:-1]
   endif
-  return ('' != filename ? filename : '[No Name]')
+  return ('' != filename ? filename : '[New File]')
 endfunction
 
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
-    return branch !=# '' ? '⭠ '.branch : ''
+    return branch !=# '' ? branch : ''
   endif
   return ''
 endfunction
@@ -226,7 +222,7 @@ endfunction
 
 function! LightlineReadonly()
   if &readonly
-    return '⭤'
+    return 'readonly'
   else
     return ''
   endif
