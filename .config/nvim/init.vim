@@ -8,7 +8,6 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'mhartington/nvim-typescript'
 Plug 'sebastianmarkow/deoplete-rust'
 Plug 'Shougo/deoplete-rct'
 Plug 'thinca/vim-quickrun'
@@ -21,7 +20,7 @@ Plug 'cespare/vim-toml'
 Plug 'derekwyatt/vim-scala'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'hashivim/vim-terraform'
 Plug 'keith/tmux.vim'
 Plug 'leafgarland/typescript-vim'

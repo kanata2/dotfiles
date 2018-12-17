@@ -14,7 +14,7 @@ Plug 'Shougo/neosnippet-snippets'
 
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'do': './install.sh' }
 Plug 'sebastianmarkow/deoplete-rust'
 
 Plug 'tomtom/tcomment_vim'
