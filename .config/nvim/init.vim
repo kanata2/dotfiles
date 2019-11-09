@@ -266,7 +266,7 @@ let g:user_emmet_settings = {
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
-      \ 'go': ['gometalinter']
+      \ 'go': ['gopls']
       \ }
 let g:ale_go_gometalinter_options = '--disable-all --enable=vet --enable=golint -t'
 " }}}2
@@ -284,6 +284,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
