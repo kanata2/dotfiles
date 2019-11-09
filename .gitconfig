@@ -19,7 +19,6 @@
   default = current
 [ghq]
   root = ~/dev/src
-  root = ~/dev/go/src
 [github]
   user = kanata2
 [include]
