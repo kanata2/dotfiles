@@ -3,22 +3,24 @@ if empty(globpath(&rtp, 'autoload/lsp.vim'))
   finish
 endif
 
-function! s:on_lsp_buffer_enabled() abort
-  function! s:check_back_space() abort "{{{
+function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction "}}}
+endfunction
 
+function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
 
   nmap <buffer> gd <plug>(lsp-definition)
   nmap <buffer> <C-]> <plug>(lsp-definition)
+  nmap <buffer> <C-[> <plug>(lsp-hover)
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ deoplete#manual_complete()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ asyncomplete#force_refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 endfunction
 
 augroup lsp_install
@@ -30,9 +32,9 @@ command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
-let g:lsp_text_edit_enabled = 1
+let g:asyncomplete_auto_completeopt = 1
+let g:asyncomplete_popup_delay = 100
+let g:lsp_text_edit_enabled = 0
 " }}}
 
 " lightline.vim {{{
