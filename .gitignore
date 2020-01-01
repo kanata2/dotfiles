@@ -2,6 +2,7 @@ tags
 .DS_Store
 .vim/.netrwhist
 .vim/plugged/*
+.vim/autoload/plug.vim
 .vim/ftplugin/*
 .vim/view/*
 .gitconfig.local

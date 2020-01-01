@@ -6,23 +6,25 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+" LSP
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" Go
+Plug 'mattn/vim-goimports'
+
 " Appearance
 Plug 'itchyny/lightline.vim'
 
 " Colorscheme
 Plug 'w0ng/vim-hybrid'
-
-" Completion
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-
-Plug 'zchee/deoplete-clang'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'mhartington/nvim-typescript', { 'for': ['typescript', 'tsx'], 'do': './install.sh' }
-Plug 'sebastianmarkow/deoplete-rust'
 
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -44,7 +46,6 @@ Plug 'prettier/vim-prettier', {
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 
-
 " Moving
 Plug 'cocopon/vaffle.vim'
 
@@ -52,14 +53,8 @@ Plug 'cocopon/vaffle.vim'
 " CSS
 Plug 'hail2u/vim-css3-syntax'
 
-" Golang
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
 " JSON
 Plug 'elzr/vim-json'
-
-" Haskell
-Plug 'itchyny/vim-haskell-indent'
 
 " HTML
 Plug 'tpope/vim-haml'

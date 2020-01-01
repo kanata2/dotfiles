@@ -1,30 +1,39 @@
-" {{{ 1 deoplete.vim
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 100
-
-""" <TAB>: completion.
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-imap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \ "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
+" vim-lsp {{{
+if empty(globpath(&rtp, 'autoload/lsp.vim'))
+  finish
 endif
 
-" {{{ 2 go
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-" }}} 2
-" {{{ 2 rust
-let g:deoplete#sources#rust#racer_binary = $HOME.'.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = $RUST_SRC_PATH
-" }}} 2
-" }}} 1
+function! s:on_lsp_buffer_enabled() abort
+  function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction "}}}
+
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> <C-]> <plug>(lsp-definition)
+  nmap <buffer> <f2> <plug>(lsp-rename)
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ deoplete#manual_complete()
+endfunction
+
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
+
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_popup_delay = 200
+let g:lsp_text_edit_enabled = 1
+" }}}
 
 " lightline.vim {{{
 let g:airline#extensions#ale#enabled = 1
@@ -52,8 +61,8 @@ function! LightlineALE()
 
     return l:counts.total == 0 ? 'ok' : printf(
           \  '%d×  %d△ ',
-          \ all_non_errors,
-          \ all_errors
+          \ all_errors,
+          \ all_non_errors
           \)
   else
     return ''
@@ -107,24 +116,6 @@ let g:user_emmet_settings = {
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
-" }}}
-
-" vim-go {{{
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-let g:go_gocode_unimported_packages = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_types = 1
-
-" Enable goimports to automatically insert import paths instead of gofmt
-let g:go_fmt_command = "goimports"
 " }}}
 
 " vim-latex {{{
