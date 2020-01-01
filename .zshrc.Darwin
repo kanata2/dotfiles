@@ -7,6 +7,7 @@ eval "$(rbenv init --no-rehash -)"
 
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=~/.local/bin:$PATH
 eval "$(pyenv init --no-rehash -)"
 eval "$(pyenv virtualenv-init --no-rehash -)"
 
@@ -29,6 +30,3 @@ export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
 
 # postgres
 export PGDATA=/usr/local/var/postgres
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
