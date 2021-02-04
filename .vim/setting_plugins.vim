@@ -65,7 +65,7 @@ let g:lightline = {
       \ }
 
 function! LightlineLsp()
-  let l:counts = lsp#ui#vim#diagnostics#get_buffer_diagnostics_counts()
+  let l:counts = lsp#get_buffer_diagnostics_counts()
   let l:errors = l:counts.error
   let l:warnings = l:counts.warning
 
