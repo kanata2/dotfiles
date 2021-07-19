@@ -1,8 +1,4 @@
 " vim-lsp {{{
-if empty(globpath(&rtp, 'autoload/lsp.vim'))
-  finish
-endif
-
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -45,17 +41,6 @@ let g:asyncomplete_popup_delay = 100
 let g:lsp_text_edit_enabled = 0
 
 let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
-
-augroup vim_lsp_golangci_lint_langserver
-  au!
-  autocmd User lsp_setup call lsp#register_server({
-      \ 'name': 'golangci-lint-langserver',
-      \ 'cmd': {server_info->['golangci-lint-langserver']},
-      \ 'initialization_options': {'command': ['golangci-lint', 'run', '--out-format', 'json']},
-      \ 'whitelist': ['go'],
-      \ })
-augroup END
-
 " }}}
 
 " lightline.vim {{{
