@@ -26,18 +26,12 @@ Plug 'itchyny/lightline.vim'
 " Colorscheme
 Plug 'w0ng/vim-hybrid'
 
-Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'mattn/emmet-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-
-Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -47,20 +41,10 @@ Plug 'tpope/vim-dispatch'
 Plug 'cocopon/vaffle.vim'
 
 " Syntax
-" CSS
-Plug 'hail2u/vim-css3-syntax'
-
 " JSON
 Plug 'elzr/vim-json'
 
-" HTML
-Plug 'tpope/vim-haml'
-Plug 'slim-template/vim-slim'
-Plug 'digitaltoad/vim-pug'
-
 " JavaScript
-Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 
 " Markdown
@@ -69,23 +53,15 @@ Plug 'plasticboy/vim-markdown'
 " Nginx
 Plug 'chr4/nginx.vim'
 
-" Ruby, Ruby on Rails
+" Ruby
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
 
 " Rust
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 
-" Scala
-Plug 'derekwyatt/vim-scala'
-
 " Terraform
 Plug 'hashivim/vim-terraform'
-
-" TeX
-Plug 'vim-latex/vim-latex'
 
 " tmux
 Plug 'keith/tmux.vim'
@@ -96,4 +72,7 @@ Plug 'cespare/vim-toml'
 " Others
 Plug 'thinca/vim-quickrun'
 Plug 'kien/ctrlp.vim'
+Plug 'jjo/vim-cue'
+
 call plug#end()
+

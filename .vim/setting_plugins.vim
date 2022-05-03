@@ -10,12 +10,13 @@ function! s:on_lsp_buffer_enabled() abort
   
   if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
   nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> <C-]> <plug>(lsp-definition)
   nmap <buffer> gr <plug>(lsp-references)
+  nmap <buffer> <C-]> <plug>(lsp-definition)
   nmap <buffer> gt <plug>(lsp-type-definition)
   nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
-  nmap <buffer> K <plug>(lsp-hover)
+  nmap <buffer> <C-\> <plug>(lsp-implementation)
+  nmap <buffer> <Leader>m <plug>(lsp-hover)
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
@@ -107,30 +108,12 @@ function! LightlineReadonly()
 endfunction
 
 " }}}
-" emmet.vim {{{
-" en -> ja
-let g:user_emmet_settings = {
-      \  'lang' : 'ja'
-      \ }
-" }}}
-
-" vim-latex {{{
-" FIXME: https://github.com/vim-latex/vim-latex/blob/master/plugin/imaps.vim#L540
-imap <C-g> <Plug>IMAP_JumpForward
-nmap <C-g> <Plug>IMAP_JumpForward
-" }}}
 
 " vim-markdown
 let g:vim_markdown_math = 1
 
 " vim-quickrun {{{
 let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
-let g:quickrun_config.haskell = {
-      \ 'type': 'haskell/stack',
-      \ 'command': 'stack',
-      \ 'exec': '%c %o %s %a',
-      \ 'cmdopt': 'runghc',
-      \ }
 nnoremap <silent> <C-q> :QuickRun<CR>
 " }}}
 
@@ -161,16 +144,5 @@ let g:ctrlp_custom_ignore = {
   \ }
 " vaffle.vim
 let g:vaffle_show_hidden_files = 1
-
-" vim-test
-" make test commands execute using dispatch.vim
-let test#strategy = "dispatch"
-
-" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
-nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
-nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
-nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
-nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 
 " vim:set foldmethod=marker:
