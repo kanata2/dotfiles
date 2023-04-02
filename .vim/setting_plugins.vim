@@ -25,6 +25,9 @@ function! s:on_lsp_buffer_enabled() abort
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 endfunction
 
+autocmd BufWritePre <buffer>
+    \ call execute('LspCodeActionSync source.organizeImports')
+
 augroup lsp_install
   au!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
@@ -33,6 +36,8 @@ command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_signs_enabled = 1
 let g:lsp_signs_error = {'text': '✗'}
 let g:lsp_signs_warning = {'text': '‼'}
@@ -42,6 +47,11 @@ let g:asyncomplete_popup_delay = 100
 let g:lsp_text_edit_enabled = 0
 
 let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
+let g:lsp_settings_filetype_terraform = 'terraform-ls'
+" }}}
+
+" vim-terraform {{{
+let g:terraform_fmt_on_save = 1
 " }}}
 
 " lightline.vim {{{

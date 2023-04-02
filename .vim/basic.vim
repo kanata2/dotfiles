@@ -18,8 +18,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 " mouse
 set mouse=a
-set guioptions+=a
-set ttymouse=xterm2
 
 " complete
 set wildmenu

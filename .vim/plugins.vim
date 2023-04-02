@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 " LSP
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -18,7 +18,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
 " Go
-Plug 'mattn/vim-goimports'
+Plug 'mattn/vim-goaddtags'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
@@ -30,6 +30,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 
@@ -49,9 +50,6 @@ Plug 'leafgarland/typescript-vim'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
-
-" Nginx
-Plug 'chr4/nginx.vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
