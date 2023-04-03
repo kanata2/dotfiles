@@ -16,7 +16,7 @@
   graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
   one   = log --oneline -n 10
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-  com   = "!f() { remote_head=$(git sybolic-ref --quite refs/remotes/origin/HEAD); remote_head=${remote_head#refs/remotes/origin/}; git checkout ${remote_head:-$(git rev-parse --symbolic --verify --quite main || git rev-parse --symbolic --verify --quite master)}; }; f"
+  com   = "!f() { remote_head=$(git symbolic-ref --quite refs/remotes/origin/HEAD); remote_head=${remote_head#refs/remotes/origin/}; git checkout ${remote_head:-$(git rev-parse --symbolic --verify --quite main || git rev-parse --symbolic --verify --quite master)}; }; f"
 [push]
   default = current
 [ghq]
