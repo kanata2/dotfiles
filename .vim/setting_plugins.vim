@@ -27,6 +27,8 @@ endfunction
 
 autocmd BufWritePre <buffer>
     \ call execute('LspCodeActionSync source.organizeImports')
+autocmd BufWritePre <buffer>
+    \ call execute('LspDocumentFormatSync')
 
 augroup lsp_install
   au!
